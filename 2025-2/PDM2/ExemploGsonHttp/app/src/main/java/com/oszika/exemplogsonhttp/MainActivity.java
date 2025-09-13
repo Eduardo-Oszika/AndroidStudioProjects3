@@ -1,11 +1,17 @@
 package com.oszika.exemplogsonhttp;
 
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,12 +34,19 @@ public class MainActivity extends AppCompatActivity {
     private List<Item> dadosBaixados;
     private ExecutorService executorService;
     private Handler mainHandler;
+    private EditText editText;
+    private TextView txtResultado;
+    private Button btnPesquisar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         listView = findViewById(R.id.lvDados);
+        editText = findViewById(R.id.etNumero);
+        txtResultado = findViewById(R.id.txtResultado);
+        btnPesquisar = findViewById(R.id.btnPesquisar);
         listaStrings = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaStrings);
         listView.setAdapter(adapter);
@@ -81,6 +94,48 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Erro ao baixar dados", Toast.LENGTH_SHORT).show()
                 );
             }
+        });
+    }
+
+    public void setVisivelBuscar(View view) {
+        listView.setVisibility(View.GONE);
+        editText.setVisibility(View.VISIBLE);
+        txtResultado.setVisibility(View.VISIBLE);
+        btnPesquisar.setVisibility(View.VISIBLE);
+    }
+
+    public void setVisivelListar(View view) {
+        editText.setVisibility(View.GONE);
+        txtResultado.setVisibility(View.GONE);
+        btnPesquisar.setVisibility(View.GONE);
+        listView.setVisibility(View.VISIBLE);
+    }
+
+    public void pesquisar(View view) {
+        String numeroStr = editText.getText().toString();
+        if (numeroStr.isEmpty()) {
+            Toast.makeText(this, "Por favor, insira um número", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        executorService.execute(() -> {
+            Conexao conexao = new Conexao();
+            InputStream inputStream = conexao.obterRespostaHTTP(URL+"/"+numeroStr);
+            Conversao conversao = new Conversao();
+            String textoJSON = conversao.converter(inputStream);
+            Log.i("JSON", "doInBackground: " + textoJSON);
+
+            if (textoJSON != null) {
+                Gson gson = new Gson();
+                Item item = gson.fromJson(textoJSON, Item.class);
+                String resultado = "UserID: " + item.getUserId()
+                        + "\nID: " + item.getId()
+                        + "\nTítulo: " + item.getTitle()
+                        + "\nBody: " + item.getBody();
+                mainHandler.post(() -> txtResultado.setText(resultado));
+            } else {
+                mainHandler.post(() -> Toast.makeText(this, "Número inválido", Toast.LENGTH_SHORT).show());
+            }
+
         });
     }
 }
