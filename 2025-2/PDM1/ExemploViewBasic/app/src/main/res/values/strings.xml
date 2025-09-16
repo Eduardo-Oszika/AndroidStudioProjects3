@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ExemploViewBasic</string>
+    <string name="digite_algo">Digite algo:</string>
+    <string name="clique_aqui">Clique aqui</string>
+    <string name="resultado">Resultado:</string>
+</resources>
