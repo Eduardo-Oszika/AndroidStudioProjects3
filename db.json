@@ -1,12 +1,32 @@
-{
-  "agenda" : [
-    { "id" : 1 , "nome" : "Ana" , "telefone" : "1111-1111"  },
-    { "id" : 2 , "nome" : "Helder" , "telefone" : "2222-2222"  },
-    { "id" : 3 , "nome" : "Fagno" , "telefone" : "3333-3333"  }
-  ],
-  "adicionais" : [
-    { "id" : 1 , "email" : "ana@ifto.edu.br"},
-    { "id" : 2 , "email" : "helder@ifto.edu.br"},
-    { "id" : 3 , "email" : "fagno@ifto.edu.br"}
-  ]
-}
+[
+  {
+    "nome": "Ana Silva",
+    "idade": 16,
+    "nota": [8.5, 7.0, 9.0],
+    "frequencia": [1, 1, 0, 1, 1, 1, 0, 1, 1, 1]
+  },
+  {
+    "nome": "Bruno Costa",
+    "idade": 17,
+    "nota": [6.5, 7.5, 8.0],
+    "frequencia": [1, 0, 1, 1, 1, 1, 1, 1, 0, 1]
+  },
+  {
+    "nome": "Carla Souza",
+    "idade": 15,
+    "nota": [9.0, 8.5, 9.5],
+    "frequencia": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  },
+  {
+    "nome": "Diego Ferreira",
+    "idade": 16,
+    "nota": [5.5, 6.0, 7.0],
+    "frequencia": [1, 0, 0, 1, 1, 0, 1, 1, 1, 0]
+  },
+  {
+    "nome": "Eduarda Lima",
+    "idade": 17,
+    "nota": [7.0, 8.0, 8.5],
+    "frequencia": [1, 1, 1, 0, 1, 1, 1, 1, 1, 1]
+  }
+]
