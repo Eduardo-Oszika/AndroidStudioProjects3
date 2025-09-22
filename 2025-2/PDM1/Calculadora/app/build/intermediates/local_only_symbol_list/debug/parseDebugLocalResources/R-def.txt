@@ -1,0 +1,31 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btnDividir
+id btnMultiplicar
+id btnSomar
+id btnSubrair
+id etNumero1
+id etNumero2
+id main
+id tvResultado
+layout activity_main
+layout activity_resultado
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string calculadora_simples
+string digite_o_primeiro_numero
+string digite_o_segundo_numero
+string dividir
+string multiplicar
+string resultado_da_operacao
+string somar
+string subtrair
+style Base.Theme.Calculadora
+style Theme.Calculadora
+xml backup_rules
+xml data_extraction_rules
