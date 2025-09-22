@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Calculadora</string>
+    <string name="calculadora_simples">Calculadora Simples</string>
+    <string name="digite_o_primeiro_numero">Digite o primeiro numero</string>
+    <string name="digite_o_segundo_numero">Digite o Segundo numero</string>
+    <string name="dividir">Dividir</string>
+    <string name="multiplicar">Multiplicar</string>
+    <string name="resultado_da_operacao">Resultado da Operação</string>
+    <string name="somar">Somar</string>
+    <string name="subtrair">Subtrair</string>
+    <style name="Base.Theme.Calculadora" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Calculadora" parent="Base.Theme.Calculadora"/>
+</resources>
