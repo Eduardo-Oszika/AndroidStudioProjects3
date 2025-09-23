@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_flamengo"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/flamengo" />
+    <item android:id="@+id/nav_corinthias"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/corinthias" />
+    <item android:id="@+id/nav_goias"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/goias" />
+
+</menu>
