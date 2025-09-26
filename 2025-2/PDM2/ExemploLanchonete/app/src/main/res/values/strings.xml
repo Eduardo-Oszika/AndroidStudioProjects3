@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ExemploLanchonete</string>
+    <string name="imagem_de_um_bolo">Imagem de um bolo</string>
+    <string name="imagem_de_um_cafe">Imagem de um café</string>
+    <string name="rs_0_00">R$ 0,00</string>
+    <string name="usando_o_tablerow">Usando o tablerow</string>
+    <string name="calcular">Calcular</string>
 </resources>
