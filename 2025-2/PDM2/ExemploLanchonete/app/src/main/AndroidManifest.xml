@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExemploLanchonete">
         <activity
+            android:name=".CafeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BoloActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
