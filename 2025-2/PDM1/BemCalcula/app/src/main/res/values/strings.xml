@@ -9,4 +9,9 @@
     <string name="obesidade_grau_i">Obesidade Grau I</string>
     <string name="obesidade_grau_ii">Obesidade Grau II</string>
     <string name="obesidade_grau_iii">Obesidade Grau III</string>
+    <string name="imagem_de_imc">imagem de imc</string>
+    <string name="bem_calcula">Bem Calcula</string>
+    <string name="imagem_com_as_opera_es_matematicas">imagem com as operações matemáticas</string>
+    <string name="calculadora_imc">Calculadora IMC</string>
+    <string name="calculadora_basica">Calculadora Basica</string>
 </resources>
