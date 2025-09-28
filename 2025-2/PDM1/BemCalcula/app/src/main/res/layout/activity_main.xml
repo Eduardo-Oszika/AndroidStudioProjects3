@@ -16,58 +16,65 @@
         android:text="@string/bem_calcula"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
-
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:gravity="center">
 
-        <ImageView
-            android:id="@+id/ivIMC"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:contentDescription="@string/imagem_de_imc"
-            android:src="@drawable/imc" />
-
-        <Button
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/calculadora_imc"
-            android:onClick="calcularIMC"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="16dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
+            <ImageView
+                android:id="@+id/ivIMC"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/imagem_de_imc"
+                android:src="@drawable/imc" />
 
-        <ImageView
-            android:id="@+id/ivCalculo"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_gravity="center"
-            android:layout_margin="8dp"
-            android:contentDescription="@string/imagem_com_as_opera_es_matematicas"
-            android:src="@drawable/calculadora" />
-        <Button
+            <ImageView
+                android:id="@+id/ivCalculo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/imagem_com_as_opera_es_matematicas"
+                android:src="@drawable/calculadora" />
+
+        </TableRow>
+
+        <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/calculadora_basica"
-            android:onClick="calcularBasico"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="calcularIMC"
+                android:text="@string/calculadora_imc"
+                android:layout_gravity="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="calcularBasico"
+                android:layout_gravity="center"
+                android:text="@string/calculadora_basica"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
+        </TableRow>
+    </TableLayout>
 </LinearLayout>
