@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BemCalcula</string>
+    <string name="erro_divisao_por_zero">Não é possível dividir por zero.</string>
+    <string name="erro_altura_invalida">A altura deve ser maior que zero.</string>
+    <string name="erro_peso_invalido">O peso deve ser maior que zero.</string>
+    <string name="abaixo_do_peso">Abaixo do peso</string>
+    <string name="peso_normal">Peso normal</string>
+    <string name="sobrepeso">Sobrepeso</string>
+    <string name="obesidade_grau_i">Obesidade Grau I</string>
+    <string name="obesidade_grau_ii">Obesidade Grau II</string>
+    <string name="obesidade_grau_iii">Obesidade Grau III</string>
 </resources>
