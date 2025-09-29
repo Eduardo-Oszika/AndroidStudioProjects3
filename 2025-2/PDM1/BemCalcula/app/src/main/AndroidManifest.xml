@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BemCalcula">
         <activity
+            android:name=".ui.activity.ResultadoIMCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CalculoIMCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CalculoBasicoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.MainActivity"
             android:exported="true">
             <intent-filter>

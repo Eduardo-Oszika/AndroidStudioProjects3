@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fundo_azul"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.activity.CalculoBasicoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center | top"
+            android:text="@string/calculadora_simples"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/txtNum1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/txtOperacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+        <TextView
+            android:id="@+id/txtNum2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/btAC"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="AC"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <Button
+                    android:id="@+id/btApagar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="⌫"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/bt7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="7"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/bt8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="8"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/bt9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="9"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/bt4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="4"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/bt5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/bt6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="6"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/bt1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/bt2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="2"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/bt3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="3"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/bt0"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+
+                <Button
+                    android:id="@+id/btPonto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/btIgual"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:text="="
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            </TableRow>
+        </TableLayout>
+
+        <RadioGroup
+            android:id="@+id/rgOperacoes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:orientation="vertical"
+            android:paddingBottom="32dp">
+
+            <RadioButton
+                android:id="@+id/rbDividir"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="/"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RadioButton
+                android:id="@+id/rbMultiplicar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="X"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RadioButton
+                android:id="@+id/rbSubtrair"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="-"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <RadioButton
+                android:id="@+id/rbSomar"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="+"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>
