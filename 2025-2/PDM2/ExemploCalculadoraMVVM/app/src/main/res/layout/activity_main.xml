@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:padding="16dp">
+
+
+    <EditText
+        android:id="@+id/editTextN1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número 1"
+        android:inputType="numberDecimal"
+        android:padding="8dp"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/editTextN2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número 2"
+        android:inputType="numberDecimal"
+        android:padding="8dp"
+        android:textSize="16sp" />
+
+
+    <EditText
+        android:id="@+id/editTextOp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Operador (+, -, *, /)"
+        android:inputType="text"
+        android:padding="8dp"
+        android:textSize="16sp" />
+
+
+    <Button
+        android:id="@+id/buttonCalculadora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:layout_marginTop="12dp"
+        android:padding="8dp"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/textViewResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resultado: "
+        android:textSize="18sp"
+        android:paddingTop="16dp"
+        android:textStyle="bold" />
+</LinearLayout>
+
