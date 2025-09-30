@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ListViewSimples</string>
+
+    <string-array name="linguagens_prog">
+        <item>JAVA</item>
+        <item>KOTLIN</item>
+        <item>SWIFT</item>
+        <item>PHP</item>
+        <item>JAVASCRIPT</item>
+        <item>RUBY</item>
+        <item>PYTHON</item>
+        <item>C</item>
+        <item>C++</item>
+        <item>C#</item>
+    </string-array>
+
+
 </resources>
