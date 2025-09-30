@@ -10,4 +10,9 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="primeiro_periodo">Primeiro período</string>
+    <string name="segundo_periodo">Segundo período</string>
+    <string name="terceiro_periodo">Terceiro período</string>
+    <string name="disciplinas">Disciplinas</string>
+    <string name="todas_as_disciplinas_spi">Todas as disciplinas SPI</string>
 </resources>

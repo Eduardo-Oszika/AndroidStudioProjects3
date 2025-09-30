@@ -1,4 +1,4 @@
-package com.oszika.disciplinascomviewmodelenavigationdrawer.ui.home;
+package com.oszika.disciplinascomviewmodelenavigationdrawer.ui.primeiroPeriodo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,21 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.oszika.disciplinascomviewmodelenavigationdrawer.databinding.FragmentHomeBinding;
+import com.oszika.disciplinascomviewmodelenavigationdrawer.databinding.FragmentPrimeiroPeriodoBinding;
 
-public class HomeFragment extends Fragment {
+public class PrimeiroPeriodoFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentPrimeiroPeriodoBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        PrimeiroPeriodoViewModel homeViewModel =
+                new ViewModelProvider(this).get(PrimeiroPeriodoViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentPrimeiroPeriodoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
+        final TextView textView = binding.textPrimeiroPeriodo;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }

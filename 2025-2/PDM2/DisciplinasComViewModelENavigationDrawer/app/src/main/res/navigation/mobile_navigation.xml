@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_primeiro_periodo">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_primeiro_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.primeiroPeriodo.PrimeiroPeriodoFragment"
+        android:label="@string/primeiro_periodo"
+        tools:layout="@layout/fragment_primeiro_periodo" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_segundo_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.segundoPeriodo.SegundoPeriodoFragment"
+        android:label="@string/segundo_periodo"
+        tools:layout="@layout/fragment_segundo_periodo" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_terceiro_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.terceiroPeriodo.TerceiroPeriodoFragment"
+        android:label="@string/terceiro_periodo"
+        tools:layout="@layout/fragment_terceiro_periodo" />
 </navigation>
