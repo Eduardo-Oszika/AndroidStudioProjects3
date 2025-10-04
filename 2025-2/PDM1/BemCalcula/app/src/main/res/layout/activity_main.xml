@@ -16,65 +16,61 @@
         android:text="@string/bem_calcula"
         android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
-    <TableLayout
+
+    <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center">
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:layout_weight="1">
 
-        <TableRow
+        <RadioButton
+            android:id="@+id/rbIMC"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/imc"
+            android:gravity="center" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="@string/calculadora_imc"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <ImageView
-                android:id="@+id/ivIMC"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                android:contentDescription="@string/imagem_de_imc"
-                android:src="@drawable/imc" />
+        <RadioButton
+            android:id="@+id/rbCalculo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/calculadora"
+            android:gravity="center" />
 
-            <ImageView
-                android:id="@+id/ivCalculo"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                android:contentDescription="@string/imagem_com_as_opera_es_matematicas"
-                android:src="@drawable/calculadora" />
-
-        </TableRow>
-
-        <TableRow
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:text="@string/calculadora_basica"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="calcularIMC"
-                android:text="@string/calculadora_imc"
-                android:layout_gravity="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    </RadioGroup>
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:onClick="calcularBasico"
-                android:layout_gravity="center"
-                android:text="@string/calculadora_basica"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+    <Button
+        android:id="@+id/bCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:onClick="abrirOutraTela"
+        android:text="@string/abrir"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
-        </TableRow>
-    </TableLayout>
+
 </LinearLayout>
