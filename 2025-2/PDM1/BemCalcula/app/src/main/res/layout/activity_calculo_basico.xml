@@ -67,12 +67,14 @@
                 android:layout_weight="1">
 
                 <Button
+                    android:id="@+id/btBin"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
                     android:layout_weight="1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                    android:visibility="invisible" />
+                    android:text="@string/bin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                     />
 
                 <Button
                     android:id="@+id/btAC"
