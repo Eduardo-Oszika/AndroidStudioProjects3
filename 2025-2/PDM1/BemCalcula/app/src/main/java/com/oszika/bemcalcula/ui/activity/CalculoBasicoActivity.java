@@ -2,8 +2,6 @@ package com.oszika.bemcalcula.ui.activity;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,9 +13,9 @@ import com.oszika.bemcalcula.util.Calculadora;
 
 public class CalculoBasicoActivity extends AppCompatActivity {
     private Calculadora calculo;
-    private Button btnAC, btnApagar, btnIgual, btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPonto;
+    private Button[] buttonsTexto;
+    private Button btnAC, btnApagar, btnIgual, btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPonto, btnSomar, btnSubtrair, btnMultiplicar, btnDividir;
     private TextView txtNum1, txtNum2, txtOperacao;
-    private RadioGroup rgOperacoes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,103 +25,61 @@ public class CalculoBasicoActivity extends AppCompatActivity {
 
         inicializarComponentes();
 
-        rgOperacoes.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId != -1) {
-                    String textoNum2 = txtNum2.getText().toString();
-                    if (!textoNum2.isEmpty()) {
-                        RadioButton rb = findViewById(checkedId);
-                        String operacao = rb.getText().toString();
-                        if (txtNum1.getText().toString().isEmpty())
-                            txtNum1.setText(textoNum2);
-                        txtOperacao.setText(operacao);
-                        txtNum2.setText("0");
-                    }
-                }
-            }
-        });
         adicionaTexto();
+        adicionaOperador();
 
         btnAC.setOnClickListener(view -> funcaoAC());
         btnApagar.setOnClickListener(view -> apagar());
         btnIgual.setOnClickListener(view -> calcular());
+        btnPonto.setOnClickListener(view -> adicionaPonto());
     }
 
     private void adicionaTexto() {
-        btn0.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (!num2.equals("0"))
-                txtNum2.setText(txtNum2.getText().toString() + "0");
-        });
-        btn1.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("1");
-            else
-                txtNum2.setText(num2 + "1");
-        });
-        btn2.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("2");
-            else
-                txtNum2.setText(num2 + "2");
-        });
-        btn3.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("3");
-            else
-                txtNum2.setText(num2 + "3");
-        });
-        btn4.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("4");
-            else
-                txtNum2.setText(num2 + "4");
-        });
-        btn5.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("5");
-            else
-                txtNum2.setText(num2 + "5");
-        });
-        btn6.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("6");
-            else
-                txtNum2.setText(num2 + "6");
-        });
-        btn7.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("7");
-            else
-                txtNum2.setText(num2 + "7");
-        });
-        btn8.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("8");
-            else
-                txtNum2.setText(num2 + "8");
-        });
-        btn9.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0"))
-                txtNum2.setText("9");
-            else
-                txtNum2.setText(num2 + "9");
+        for (int i = 0; i < buttonsTexto.length; i++) {
+            int num = i;
+            buttonsTexto[i].setOnClickListener(view -> {
+                String num2 = txtNum2.getText().toString();
+                if (num2.equals("0"))
+                    txtNum2.setText(String.valueOf(num));
+                else
+                    txtNum2.setText(num2 + num);
+            });
+        }
+    }
+
+    private void adicionaPonto() {
+        String num2 = txtNum2.getText().toString();
+        if (!num2.contains(".")) {
+            txtNum2.setText(num2 + ".");
+    }
+        }
+
+    private void adicionaOperador() {
+        btnSomar.setOnClickListener(view -> {
+            txtNum1.setText(txtNum2.getText().toString());
+            txtOperacao.setText("+");
+            txtNum2.setText("0");
         });
 
-        btnPonto.setOnClickListener(view -> {
+        btnSubtrair.setOnClickListener(view -> {
+            txtNum1.setText(txtNum2.getText().toString());
+            txtOperacao.setText("-");
+            txtNum2.setText("0");
+        });
+
+        btnMultiplicar.setOnClickListener(view -> {
+            txtNum1.setText(txtNum2.getText().toString());
+            txtOperacao.setText("X");
+            txtNum2.setText("0");
+        });
+        btnDividir.setOnClickListener(view -> {
             String num2 = txtNum2.getText().toString();
-            if (!num2.contains(".")) {
-                txtNum2.setText(num2 + ".");
+            if (num2.equals("0")) {
+                Snackbar.make(btnDividir, "Não é possível dividir por zero", Snackbar.LENGTH_LONG).show();
+            } else {
+                txtNum1.setText(txtNum2.getText().toString());
+                txtOperacao.setText("/");
+                txtNum2.setText("0");
             }
         });
     }
@@ -153,10 +109,9 @@ public class CalculoBasicoActivity extends AppCompatActivity {
                         break;
                 }
 
-                txtNum1.setText(num1+" "+operacao+" "+num2+" =");
+                txtNum1.setText(num1 + " " + operacao + " " + num2 + " =");
                 txtNum2.setText(String.valueOf(resultado));
                 txtOperacao.setText("");
-                rgOperacoes.clearCheck();
 
             } catch (IllegalArgumentException e) {
                 Snackbar.make(btnIgual, e.getMessage(), Snackbar.LENGTH_LONG).show();
@@ -166,13 +121,20 @@ public class CalculoBasicoActivity extends AppCompatActivity {
 
     private void apagar() {
         String num2 = txtNum2.getText().toString();
-        if (!num2.equals("0")) {
+        String num1 = txtNum1.getText().toString();
+        if (!num2.equals("0") && !num2.isEmpty()) {
             txtNum2.setText(num2.substring(0, num2.length() - 1));
-        } else if (txtNum1.getText().toString().isEmpty()) {
+            if (txtNum2.getText().toString().isEmpty()) {
+                txtNum2.setText("0");
+            }
+        } else if (num1.isEmpty()) {
             txtNum2.setText("0");
+        } else if (num1.contains("=")) {
+            txtNum1.setText("");
+            txtNum2.setText("0");
+            txtOperacao.setText("");
         } else {
-            rgOperacoes.clearCheck();
-            txtNum2.setText(txtNum1.getText().toString());
+            txtNum2.setText(num1);
             txtNum1.setText("");
             txtOperacao.setText("");
         }
@@ -182,7 +144,6 @@ public class CalculoBasicoActivity extends AppCompatActivity {
         txtNum1.setText("");
         txtNum2.setText("0");
         txtOperacao.setText("");
-        rgOperacoes.clearCheck();
     }
 
     private void inicializarComponentes() {
@@ -193,19 +154,24 @@ public class CalculoBasicoActivity extends AppCompatActivity {
         txtNum2 = findViewById(R.id.txtNum2);
         txtOperacao = findViewById(R.id.txtOperacao);
         calculo = new Calculadora();
-        rgOperacoes = findViewById(R.id.rgOperacoes);
 
-        btn0 = findViewById(R.id.bt0);
-        btn1 = findViewById(R.id.bt1);
-        btn2 = findViewById(R.id.bt2);
-        btn3 = findViewById(R.id.bt3);
-        btn4 = findViewById(R.id.bt4);
-        btn5 = findViewById(R.id.bt5);
-        btn6 = findViewById(R.id.bt6);
-        btn7 = findViewById(R.id.bt7);
-        btn8 = findViewById(R.id.bt8);
-        btn9 = findViewById(R.id.bt9);
+        buttonsTexto = new Button[10];
+        buttonsTexto[0] = findViewById(R.id.bt0);
+        buttonsTexto[1] = findViewById(R.id.bt1);
+        buttonsTexto[2] = findViewById(R.id.bt2);
+        buttonsTexto[3] = findViewById(R.id.bt3);
+        buttonsTexto[4] = findViewById(R.id.bt4);
+        buttonsTexto[5] = findViewById(R.id.bt5);
+        buttonsTexto[6] = findViewById(R.id.bt6);
+        buttonsTexto[7] = findViewById(R.id.bt7);
+        buttonsTexto[8] = findViewById(R.id.bt8);
+        buttonsTexto[9] = findViewById(R.id.bt9);
+
         btnPonto = findViewById(R.id.btPonto);
+        btnSomar = findViewById(R.id.btSomar);
+        btnSubtrair = findViewById(R.id.btSubtrair);
+        btnMultiplicar = findViewById(R.id.btMultiplicar);
+        btnDividir = findViewById(R.id.btDividir);
     }
 
 
