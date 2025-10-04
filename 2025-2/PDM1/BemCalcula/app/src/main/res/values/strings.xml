@@ -27,4 +27,6 @@
     <string name="sua_classifica_e">Sua classificação é: </string>
     <string name="calculadora_simples">Calculadora Simples</string>
     <string name="abrir">Abrir</string>
+    <string name="digite_seu_nome">Digite seu Nome</string>
+    <string name="nome">Nome</string>
 </resources>

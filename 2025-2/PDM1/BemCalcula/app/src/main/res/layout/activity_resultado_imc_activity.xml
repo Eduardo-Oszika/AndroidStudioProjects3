@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/fundo_azul"
+    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".ui.activity.ResultadoIMCActivity">
 
@@ -21,9 +21,16 @@
         android:id="@+id/ivIMCResultado"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_margin="16dp"
-        android:contentDescription="@string/imagem_de_imc"/>
+        android:layout_weight="1"
+        android:contentDescription="@string/imagem_de_imc" />
+
+    <TextView
+        android:id="@+id/tvNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
         android:id="@+id/tvIMCResultado"
@@ -32,6 +39,7 @@
         android:gravity="center"
         android:text="@string/seu_imc"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
     <TextView
         android:id="@+id/tvIMCClassificacao"
         android:layout_width="match_parent"

@@ -10,14 +10,13 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.oszika.bemcalcula.R;
+import com.oszika.bemcalcula.entity.Usuario;
 import com.oszika.bemcalcula.util.CalculadoraIMC;
 import com.oszika.bemcalcula.util.ClassificacaoIMC;
 
 public class CalculoIMCActivity extends AppCompatActivity {
-    private CalculadoraIMC calculo;
-    private EditText etPeso, etAltura;
+    private EditText etnNome, etPeso, etAltura;
     private Button btnCalcularIMC;
-    private ClassificacaoIMC classificacao;
 
 
     @Override
@@ -33,21 +32,27 @@ public class CalculoIMCActivity extends AppCompatActivity {
 
     private void calcularIMC() {
         if (verificarCampos()) {
+            String nome = etnNome.getText().toString();
             double peso = Double.parseDouble(etPeso.getText().toString());
             double altura = Double.parseDouble(etAltura.getText().toString());
-            double imc = calculo.calcularIMC(peso, altura);
-            classificacao = calculo.classificarIMC(imc);
+            Usuario user = new Usuario(nome, peso, altura);
+
 
             Intent intent = new Intent(CalculoIMCActivity.this, ResultadoIMCActivity.class);
-            intent.putExtra("imc", imc);
-            intent.putExtra("classificacao", classificacao.ordinal());
+
+            intent.putExtra("user", user);
             startActivity(intent);
         }
     }
 
     private boolean verificarCampos() {
+        String nome = etnNome.getText().toString();
         String peso = etPeso.getText().toString();
         String altura = etAltura.getText().toString();
+        if (nome.isEmpty()) {
+            etnNome.setError(getString(R.string.campo_obrigatorio));
+            return false;
+        }
         if (peso.isEmpty()) {
             etPeso.setError(getString(R.string.campo_obrigatorio));
             return false;
@@ -68,9 +73,9 @@ public class CalculoIMCActivity extends AppCompatActivity {
     }
 
     private void inicializarComponentes() {
+        etnNome = findViewById(R.id.etNome);
         etPeso = findViewById(R.id.etPeso);
         etAltura = findViewById(R.id.etAltura);
         btnCalcularIMC = findViewById(R.id.btnCalcularIMC);
-        calculo = new CalculadoraIMC();
     }
 }

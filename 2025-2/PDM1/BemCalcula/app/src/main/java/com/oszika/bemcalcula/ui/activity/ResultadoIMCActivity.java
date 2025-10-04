@@ -1,24 +1,24 @@
 package com.oszika.bemcalcula.ui.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.oszika.bemcalcula.R;
+import com.oszika.bemcalcula.entity.Usuario;
+import com.oszika.bemcalcula.util.CalculadoraIMC;
 import com.oszika.bemcalcula.util.ClassificacaoIMC;
 
 public class ResultadoIMCActivity extends AppCompatActivity {
-    TextView tvResultadoIMC, tvClassificacaoIMC;
-    ImageView ivResultadoIMC;
-    double imc;
-    ClassificacaoIMC classificacao;
+    private TextView tvNome, tvResultadoIMC, tvClassificacaoIMC;
+    private ImageView ivResultadoIMC;
+    private double imc;
+    private CalculadoraIMC calculadora;
+    private ClassificacaoIMC classificacao;
+    private String nome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,8 @@ public class ResultadoIMCActivity extends AppCompatActivity {
     }
 
     private void setComponentes() {
+        tvNome.setText(nome);
+
         StringBuilder sbIMC = new StringBuilder();
         sbIMC.append(tvResultadoIMC.getText());
         sbIMC.append(" ");
@@ -52,9 +54,13 @@ public class ResultadoIMCActivity extends AppCompatActivity {
         tvResultadoIMC = findViewById(R.id.tvIMCResultado);
         tvClassificacaoIMC = findViewById(R.id.tvIMCClassificacao);
         ivResultadoIMC = findViewById(R.id.ivIMCResultado);
+        tvNome = findViewById(R.id.tvNome);
 
-        imc = getIntent().getDoubleExtra("imc",0);
-        int ordinal = getIntent().getIntExtra("classificacao",0);
+        Usuario user = (Usuario) getIntent().getSerializableExtra("user");
+        nome = user.getNome();
+        calculadora = new CalculadoraIMC();
+        imc = calculadora.calcularIMC(user.getPeso(), user.getAltura());
+        int ordinal = calculadora.classificarIMC(imc).ordinal();
         classificacao = ClassificacaoIMC.values()[ordinal];
 
     }
