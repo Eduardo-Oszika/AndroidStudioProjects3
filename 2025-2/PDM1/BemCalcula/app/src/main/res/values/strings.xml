@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BemCalcula</string>
+    <string name="erro_divisao_por_zero">Não é possível dividir por zero.</string>
+    <string name="erro_altura_invalida">A altura deve ser maior que zero.</string>
+    <string name="erro_peso_invalido">O peso deve ser maior que zero.</string>
+    <string name="abaixo_do_peso">Abaixo do peso</string>
+    <string name="peso_normal">Peso normal</string>
+    <string name="sobrepeso">Sobrepeso</string>
+    <string name="obesidade_grau_i">Obesidade Grau I</string>
+    <string name="obesidade_grau_ii">Obesidade Grau II</string>
+    <string name="obesidade_grau_iii">Obesidade Grau III</string>
+    <string name="imagem_de_imc">imagem de imc</string>
+    <string name="bem_calcula">Bem Calcula</string>
+    <string name="imagem_com_as_opera_es_matematicas">imagem com as operações matemáticas</string>
+    <string name="calculadora_imc">Calculadora IMC</string>
+    <string name="calculadora_basica">Calculadora Basica</string>
+    <string name="peso_kg">Peso (kg):</string>
+    <string name="digite_seu_peso_kg">Digite seu peso (kg):</string>
+    <string name="altura_m">Altura (m):</string>
+    <string name="digite_sua_altura_m">Digite sua altura (m):</string>
+    <string name="calcular_imc">Calcular IMC</string>
+    <string name="campo_obrigatorio">Campo obrigatório</string>
+    <string name="peso_invalido">Peso deve ser maior que zero</string>
+    <string name="altura_invalida">Altura deve ser maior que zero</string>
+    <string name="resultado_do_imc">Resultado do IMC</string>
+    <string name="seu_imc">Seu IMC é: </string>
+    <string name="sua_classifica_e">Sua classificação é: </string>
+    <string name="calculadora_simples">Calculadora Simples</string>
+    <string name="abrir">Abrir</string>
+    <string name="digite_seu_nome">Digite seu Nome</string>
+    <string name="nome">Nome</string>
+    <string name="bin">BIN</string>
+</resources>
