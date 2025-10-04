@@ -1,18 +1,15 @@
 package com.oszika.bemcalcula.util;
 
-import android.content.res.Resources;
-
 import com.oszika.bemcalcula.R;
 
 public class CalculadoraIMC {
-    private static final Resources resources = Resources.getSystem();
 
     public double calcularIMC(double peso, double altura) {
         if (altura <= 0) {
-            throw new IllegalArgumentException(resources.getString(R.string.erro_altura_invalida));
+            throw new IllegalArgumentException(String.valueOf(R.string.erro_altura_invalida));
         }
         if (peso <= 0) {
-            throw new IllegalArgumentException(resources.getString(R.string.erro_peso_invalido));
+            throw new IllegalArgumentException(String.valueOf(R.string.erro_peso_invalido));
         }
         return peso / (altura * altura);
     }
