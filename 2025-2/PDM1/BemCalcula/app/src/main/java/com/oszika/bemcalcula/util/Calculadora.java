@@ -2,14 +2,12 @@ package com.oszika.bemcalcula.util;
 
 
 
-import android.content.res.Resources;
 
 import com.oszika.bemcalcula.R;
 
 
 public class Calculadora {
 
-    private static final Resources resources = Resources.getSystem();
 
     public Calculadora() {
     }
@@ -28,7 +26,7 @@ public class Calculadora {
 
     public double dividir(double num1, double num2) {
         if (num2 == 0) {
-            throw new IllegalArgumentException(resources.getString(R.string.erro_divisao_por_zero));
+            throw new IllegalArgumentException(String.valueOf(R.string.erro_divisao_por_zero));
         }
         return (double) num1 / num2;
     }
