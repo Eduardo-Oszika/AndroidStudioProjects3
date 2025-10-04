@@ -10,11 +10,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.oszika.bemcalcula.R;
 import com.oszika.bemcalcula.util.Calculadora;
+import com.oszika.bemcalcula.util.Converter;
 
 public class CalculoBasicoActivity extends AppCompatActivity {
     private Calculadora calculo;
     private Button[] buttonsTexto;
-    private Button btnAC, btnApagar, btnIgual, btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPonto, btnSomar, btnSubtrair, btnMultiplicar, btnDividir;
+    private Button[] buttonsOperacao;
+    private Button btnAC, btnApagar, btnIgual, btnPonto, btnBIN;
     private TextView txtNum1, txtNum2, txtOperacao;
 
     @Override
@@ -32,6 +34,19 @@ public class CalculoBasicoActivity extends AppCompatActivity {
         btnApagar.setOnClickListener(view -> apagar());
         btnIgual.setOnClickListener(view -> calcular());
         btnPonto.setOnClickListener(view -> adicionaPonto());
+        btnBIN.setOnClickListener(view -> converterBin());
+    }
+
+    private void converterBin() {
+        String snum2 = txtNum2.getText().toString();
+        if (!snum2.equals("0") && !snum2.contains(".")) {
+            long num2 = Integer.parseInt(snum2);
+            if (num2 > 0) {
+                String resultado = Converter.converterParaBinario(num2);
+                txtNum1.setText(num2 + " =");
+                txtNum2.setText(resultado);
+            }
+        }
     }
 
     private void adicionaTexto() {
@@ -51,37 +66,23 @@ public class CalculoBasicoActivity extends AppCompatActivity {
         String num2 = txtNum2.getText().toString();
         if (!num2.contains(".")) {
             txtNum2.setText(num2 + ".");
-    }
         }
+    }
 
     private void adicionaOperador() {
-        btnSomar.setOnClickListener(view -> {
-            txtNum1.setText(txtNum2.getText().toString());
-            txtOperacao.setText("+");
-            txtNum2.setText("0");
-        });
-
-        btnSubtrair.setOnClickListener(view -> {
-            txtNum1.setText(txtNum2.getText().toString());
-            txtOperacao.setText("-");
-            txtNum2.setText("0");
-        });
-
-        btnMultiplicar.setOnClickListener(view -> {
-            txtNum1.setText(txtNum2.getText().toString());
-            txtOperacao.setText("X");
-            txtNum2.setText("0");
-        });
-        btnDividir.setOnClickListener(view -> {
-            String num2 = txtNum2.getText().toString();
-            if (num2.equals("0")) {
-                Snackbar.make(btnDividir, "Não é possível dividir por zero", Snackbar.LENGTH_LONG).show();
-            } else {
-                txtNum1.setText(txtNum2.getText().toString());
-                txtOperacao.setText("/");
-                txtNum2.setText("0");
-            }
-        });
+        for (int i = 0; i < buttonsOperacao.length; i++) {
+            int operador = i;
+            buttonsOperacao[i].setOnClickListener(view -> {
+                String num2 = txtNum2.getText().toString();
+                if (num2.equals("0") && operador == 3) {
+                    Snackbar.make(buttonsOperacao[operador], "Não é possível dividir por zero", Snackbar.LENGTH_LONG).show();
+                } else {
+                    txtNum1.setText(txtNum2.getText().toString());
+                    txtOperacao.setText(buttonsOperacao[operador].getText().toString());
+                    txtNum2.setText("0");
+                }
+            });
+        }
     }
 
     private void calcular() {
@@ -114,7 +115,8 @@ public class CalculoBasicoActivity extends AppCompatActivity {
                 txtOperacao.setText("");
 
             } catch (IllegalArgumentException e) {
-                Snackbar.make(btnIgual, e.getMessage(), Snackbar.LENGTH_LONG).show();
+                int erro = Integer.parseInt(e.getMessage());
+                Snackbar.make(btnIgual, getString(erro), Snackbar.LENGTH_LONG).show();
             }
         }
     }
@@ -150,6 +152,8 @@ public class CalculoBasicoActivity extends AppCompatActivity {
         btnAC = findViewById(R.id.btAC);
         btnApagar = findViewById(R.id.btApagar);
         btnIgual = findViewById(R.id.btIgual);
+        btnBIN = findViewById(R.id.btBin);
+
         txtNum1 = findViewById(R.id.txtNum1);
         txtNum2 = findViewById(R.id.txtNum2);
         txtOperacao = findViewById(R.id.txtOperacao);
@@ -167,11 +171,12 @@ public class CalculoBasicoActivity extends AppCompatActivity {
         buttonsTexto[8] = findViewById(R.id.bt8);
         buttonsTexto[9] = findViewById(R.id.bt9);
 
+        buttonsOperacao = new Button[4];
+        buttonsOperacao[0] = findViewById(R.id.btSomar);
+        buttonsOperacao[1] = findViewById(R.id.btSubtrair);
+        buttonsOperacao[2] = findViewById(R.id.btMultiplicar);
+        buttonsOperacao[3] = findViewById(R.id.btDividir);
         btnPonto = findViewById(R.id.btPonto);
-        btnSomar = findViewById(R.id.btSomar);
-        btnSubtrair = findViewById(R.id.btSubtrair);
-        btnMultiplicar = findViewById(R.id.btMultiplicar);
-        btnDividir = findViewById(R.id.btDividir);
     }
 
 
