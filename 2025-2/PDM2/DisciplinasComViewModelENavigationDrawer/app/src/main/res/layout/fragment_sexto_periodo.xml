@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.segundoPeriodo.SegundoPeriodoFragment">
+    tools:context=".ui.sextoPeriodo.SextoPeriodoFragment">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:id="@+id/list_view_segundo_periodo"/>
+        android:id="@+id/list_view_sexto_periodo"/>
 
 </LinearLayout>
