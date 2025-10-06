@@ -32,10 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_primeiro_periodo, R.id.nav_segundo_periodo, R.id.nav_terceiro_periodo)
+                R.id.nav_primeiro_periodo, R.id.nav_segundo_periodo, R.id.nav_terceiro_periodo, R.id.nav_quarto_periodo, R.id.nav_quinto_periodo, R.id.nav_sexto_periodo)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
