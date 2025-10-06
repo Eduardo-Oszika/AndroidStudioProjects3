@@ -8,15 +8,15 @@ import com.oszika.disciplinascomviewmodelenavigationdrawer.ui.disciplina.Discipl
 
 import java.util.List;
 
-public class TerceiroPeriodoViewModel extends ViewModel {
+public class QuintoPeriodoViewModel extends ViewModel {
 
     private DisciplinaRepositorio disciplinaRepositorio;
     public MutableLiveData<List<Disciplina>> disciplinas;
 
-    public TerceiroPeriodoViewModel() {
+    public QuintoPeriodoViewModel() {
         disciplinaRepositorio = new DisciplinaRepositorio();
         disciplinas = new MutableLiveData<>();
-        disciplinas.setValue(disciplinaRepositorio.obterDisciplinasPeriodo3());
+        disciplinas.setValue(disciplinaRepositorio.obterDisciplinasPeriodo5());
     }
 
     public MutableLiveData<List<Disciplina>> getDisciplinas() {

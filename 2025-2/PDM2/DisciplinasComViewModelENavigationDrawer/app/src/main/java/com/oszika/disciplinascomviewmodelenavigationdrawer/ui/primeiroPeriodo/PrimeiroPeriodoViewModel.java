@@ -4,16 +4,25 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class PrimeiroPeriodoViewModel extends ViewModel {
+import com.oszika.disciplinascomviewmodelenavigationdrawer.ui.disciplina.Disciplina;
+import com.oszika.disciplinascomviewmodelenavigationdrawer.ui.disciplina.DisciplinaRepositorio;
 
-    private final MutableLiveData<String> mText;
+import java.util.List;
+
+public class PrimeiroPeriodoViewModel extends ViewModel{
+
+    private DisciplinaRepositorio disciplinaRepositorio;
+    public MutableLiveData<List<Disciplina>> disciplinas;
 
     public PrimeiroPeriodoViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+
+        disciplinaRepositorio = new DisciplinaRepositorio();
+        disciplinas = new MutableLiveData<>();
+        disciplinas.setValue(disciplinaRepositorio.obterDisciplinasPeriodo1());
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public MutableLiveData<List<Disciplina>> getDisciplinas() {
+        return disciplinas;
     }
+
 }

@@ -1,4 +1,4 @@
-package com.oszika.disciplinascomviewmodelenavigationdrawer.ui.terceiroPeriodo;
+package com.oszika.disciplinascomviewmodelenavigationdrawer.ui.quartoPeriodo;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -8,15 +8,15 @@ import com.oszika.disciplinascomviewmodelenavigationdrawer.ui.disciplina.Discipl
 
 import java.util.List;
 
-public class TerceiroPeriodoViewModel extends ViewModel {
+public class QuartoPeriodoViewModel extends ViewModel {
 
     private DisciplinaRepositorio disciplinaRepositorio;
     public MutableLiveData<List<Disciplina>> disciplinas;
 
-    public TerceiroPeriodoViewModel() {
+    public QuartoPeriodoViewModel() {
         disciplinaRepositorio = new DisciplinaRepositorio();
         disciplinas = new MutableLiveData<>();
-        disciplinas.setValue(disciplinaRepositorio.obterDisciplinasPeriodo3());
+        disciplinas.setValue(disciplinaRepositorio.obterDisciplinasPeriodo4());
     }
 
     public MutableLiveData<List<Disciplina>> getDisciplinas() {

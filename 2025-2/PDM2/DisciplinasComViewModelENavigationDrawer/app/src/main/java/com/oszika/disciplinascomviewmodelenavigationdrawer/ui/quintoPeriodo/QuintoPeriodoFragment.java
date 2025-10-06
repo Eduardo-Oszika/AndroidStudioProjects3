@@ -1,40 +1,38 @@
-package com.oszika.disciplinascomviewmodelenavigationdrawer.ui.segundoPeriodo;
+package com.oszika.disciplinascomviewmodelenavigationdrawer.ui.quintoPeriodo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.oszika.disciplinascomviewmodelenavigationdrawer.databinding.FragmentSegundoPeriodoBinding;
+import com.oszika.disciplinascomviewmodelenavigationdrawer.databinding.FragmentQuintoPeriodoBinding;
 import com.oszika.disciplinascomviewmodelenavigationdrawer.ui.disciplina.Disciplina;
 import com.oszika.disciplinascomviewmodelenavigationdrawer.ui.disciplina.DisciplinasAdapter;
+import com.oszika.disciplinascomviewmodelenavigationdrawer.ui.terceiroPeriodo.QuintoPeriodoViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SegundoPeriodoFragment extends Fragment {
+public class QuintoPeriodoFragment extends Fragment {
 
     private DisciplinasAdapter adapter;
-    private FragmentSegundoPeriodoBinding binding;
+    private FragmentQuintoPeriodoBinding binding;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        SegundoPeriodoViewModel segundoPeriodoViewModel =
-                new ViewModelProvider(this).get(SegundoPeriodoViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        QuintoPeriodoViewModel quintoPeriodoViewModel = new ViewModelProvider(this).get(QuintoPeriodoViewModel.class);
 
-        binding = FragmentSegundoPeriodoBinding.inflate(inflater, container, false);
+        binding = FragmentQuintoPeriodoBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         adapter = new DisciplinasAdapter(getActivity(), new ArrayList<Disciplina>());
-        binding.listViewSegundoPeriodo.setAdapter(adapter);
+        binding.listViewQuintoPeriodo.setAdapter(adapter);
 
-        segundoPeriodoViewModel.getDisciplinas().observe(getActivity(), new Observer<List<Disciplina>>() {
+        quintoPeriodoViewModel.getDisciplinas().observe(getActivity(), new Observer<List<Disciplina>>() {
             @Override
             public void onChanged(List<Disciplina> disciplinas) {
 
