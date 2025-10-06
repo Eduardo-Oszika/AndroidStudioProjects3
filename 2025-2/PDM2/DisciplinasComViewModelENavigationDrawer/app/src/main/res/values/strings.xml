@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">DisciplinasComViewModelENavigationDrawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="primeiro_periodo">Primeiro período</string>
+    <string name="segundo_periodo">Segundo período</string>
+    <string name="terceiro_periodo">Terceiro período</string>
+    <string name="quarto_periodo">Quarto período</string>
+    <string name="quinto_periodo">Quinto período</string>
+    <string name="sexto_periodo">Sexto período</string>
+    <string name="disciplinas">Disciplinas</string>
+    <string name="todas_as_disciplinas_spi">Todas as disciplinas SPI</string>
+
+    <string-array name="Periodo1">
+        <item>Informática Instrumental</item>
+        <item>Inglês Técnico</item>
+        <item>Introdução À Computação</item>
+        <item>Introdução à Lógica</item>
+        <item>Tendências Tecnológicas para o Mercado de TI</item>
+    </string-array>
+
+    <string-array name="Periodo2">
+        <item>Análise de Sistemas</item>
+        <item>Fundamentos e Projeto de Banco de Dados</item>
+        <item>Introdução à Programação</item>
+        <item>Programação Básica para Web</item>
+        <item>Programação Orientada À Objetos</item>
+    </string-array>
+
+    <string-array name="Periodo3">
+        <item>Administração de Sistemas Proprietários</item>
+        <item>Gerenciamento de Dados para Web</item>
+        <item>Introdução à Conectividade</item>
+        <item>Programação para Banco de Dados</item>
+        <item>Programação para Web Designers</item>
+        <item>Programação para Web I</item>
+    </string-array>
+
+    <string-array name="Periodo4">
+        <item>Gestão de Projetos</item>
+        <item>Programação para Web II</item>
+        <item>Projeto de Interface Web</item>
+        <item>Projeto de Sistemas</item>
+        <item>Sistemas Distribuídos e SOA</item>
+        <item>Testes de Software</item>
+    </string-array>
+
+    <string-array name="Periodo5">
+        <item>Administração de Banco de Dados</item>
+        <item>Infraestrutura para Sistemas Web</item>
+        <item>Metodologias de Desenvolvimento</item>
+        <item>Novas Tecnologias em BD</item>
+        <item>Programação para Dispositivos Móveis I</item>
+        <item>Segurança de Sistemas</item>
+    </string-array>
+
+    <string-array name="Periodo6">
+        <item>Gerência de Configuração</item>
+        <item>Novas Tecnologias em Desenvolvimento para Web</item>
+        <item>Padrões de Projeto</item>
+        <item>Programação para Dispositivos Móveis II</item>
+    </string-array>
+</resources>

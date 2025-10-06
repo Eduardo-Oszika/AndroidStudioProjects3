@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_primeiro_periodo"
+            android:title="@string/primeiro_periodo"/>
+        <item
+            android:id="@+id/nav_segundo_periodo"
+            android:title="@string/segundo_periodo"/>
+        <item
+            android:id="@+id/nav_terceiro_periodo"
+            android:title="@string/terceiro_periodo"/>
+        <item
+            android:id="@+id/nav_quarto_periodo"
+            android:title="@string/quarto_periodo"/>
+        <item
+            android:id="@+id/nav_quinto_periodo"
+            android:title="@string/quinto_periodo"/>
+        <item
+            android:id="@+id/nav_sexto_periodo"
+            android:title="@string/sexto_periodo"/>
+    </group>
+</menu>

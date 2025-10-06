@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_primeiro_periodo">
+
+    <fragment
+        android:id="@+id/nav_primeiro_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.primeiroPeriodo.PrimeiroPeriodoFragment"
+        android:label="@string/primeiro_periodo"
+        tools:layout="@layout/fragment_primeiro_periodo" />
+
+    <fragment
+        android:id="@+id/nav_segundo_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.segundoPeriodo.SegundoPeriodoFragment"
+        android:label="@string/segundo_periodo"
+        tools:layout="@layout/fragment_segundo_periodo" />
+
+    <fragment
+        android:id="@+id/nav_terceiro_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.terceiroPeriodo.TerceiroPeriodoFragment"
+        android:label="@string/terceiro_periodo"
+        tools:layout="@layout/fragment_terceiro_periodo" />
+    <fragment
+        android:id="@+id/nav_quarto_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.quartoPeriodo.QuartoPeriodoFragment"
+        android:label="@string/quarto_periodo"
+        tools:layout="@layout/fragment_quarto_periodo" />
+    <fragment
+        android:id="@+id/nav_quinto_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.quintoPeriodo.QuintoPeriodoFragment"
+        android:label="@string/quinto_periodo"
+        tools:layout="@layout/fragment_quinto_periodo" />
+    <fragment
+        android:id="@+id/nav_sexto_periodo"
+        android:name="com.oszika.disciplinascomviewmodelenavigationdrawer.ui.sextoPeriodo.SextoPeriodoFragment"
+        android:label="@string/sexto_periodo"
+        tools:layout="@layout/fragment_sexto_periodo" />
+</navigation>
