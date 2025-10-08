@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ExemploToolBarMenu">
         <activity
+            android:name=".JavaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
