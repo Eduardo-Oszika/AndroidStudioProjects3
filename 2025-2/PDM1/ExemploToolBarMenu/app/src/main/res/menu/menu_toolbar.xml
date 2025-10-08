@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/java"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/programando_em_java" />
+    <item
+        android:id="@+id/php"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/programando_em_php" />
+    <item
+        android:id="@+id/c"
+        android:icon="@mipmap/ic_launcher"
+        android:title="@string/programando_em_c" />
+</menu>

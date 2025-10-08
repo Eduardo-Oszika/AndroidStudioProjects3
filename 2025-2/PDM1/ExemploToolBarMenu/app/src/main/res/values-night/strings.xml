@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android">Android</string>
+    <string name="programando_em_c">programing in C</string>
+    <string name="programando_em_php">programing in PHP</string>
+    <string name="programando_em_java">programing in Java</string>
+</resources>
