@@ -3,10 +3,11 @@ package com.oszika.gsonrelatorioturma.entity;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class Aluno {
+public class Aluno implements Serializable {
 
     @SerializedName("nome")
     @Expose
