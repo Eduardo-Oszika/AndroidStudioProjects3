@@ -14,27 +14,29 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:text="Relatório da Turma"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:id="@+id/tvMediaIdades"
-        android:paddingTop="16dp"
-        android:text="Media das idades: "/>
+        android:text="Turma"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:paddingTop="16dp"
-        android:text="Aprovados"/>
+        android:text="Alunos"/>
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/lvAprovados"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/lvAlunos"
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp"
         android:visibility="visible" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/relatorio"
+        android:id="@+id/btnRelatorio"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 </LinearLayout>
