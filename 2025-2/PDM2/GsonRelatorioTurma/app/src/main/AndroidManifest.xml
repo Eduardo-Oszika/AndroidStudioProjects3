@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GsonRelatorioTurma">
         <activity
+            android:name=".activity.SegundaActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
