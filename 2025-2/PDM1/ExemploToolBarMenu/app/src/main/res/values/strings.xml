@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ExemploToolBarMenu</string>
+    <string name="android">Android</string>
+    <string name="programando_em_c">programando em C</string>
+    <string name="programando_em_php">programando em PHP</string>
+    <string name="programando_em_java">programando em Java</string>
+</resources>
