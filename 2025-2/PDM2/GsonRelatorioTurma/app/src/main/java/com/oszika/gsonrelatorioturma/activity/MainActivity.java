@@ -1,12 +1,13 @@
 package com.oszika.gsonrelatorioturma.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -29,9 +30,9 @@ import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
     private ListView listView;
-    private TextView textViewMediaIdade;
     private ArrayAdapter<Aluno> adapterAluno;
     private Turma turma;
+    private Button btnRelatorio;
 
     private final String URL = "https://my-json-server.typicode.com/Eduardo-Oszika/AndroidStudioProjects3/alunos";
     private ExecutorService executorService;
@@ -43,19 +44,32 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        listView = findViewById(R.id.lvAprovados);
-        textViewMediaIdade = findViewById(R.id.tvMediaIdades);
+        listView = findViewById(R.id.lvAlunos);
+        btnRelatorio = findViewById(R.id.btnRelatorio);
 
         turma = new Turma();
 
         turma.setAlunos(new ArrayList<>());
-        adapterAluno = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, turma.getAprovados());
+        adapterAluno = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, turma.getAlunos());
 
         listView.setAdapter(adapterAluno);
         executorService = Executors.newSingleThreadExecutor();
         mainHandler = new Handler(Looper.getMainLooper());
         obterDados();
+
+        btnRelatorio.setOnClickListener(v -> abrirRelatorio());
     }
+
+    private void abrirRelatorio() {
+        if (turma.getAlunos().isEmpty()) {
+            Toast.makeText(getApplicationContext(), "Aguarde o download dos dados", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent it = new Intent(this, SegundaActivity.class);
+            it.putExtra("turma", turma);
+            startActivity(it);
+        }
+    }
+
 
     private void obterDados() {
         Toast.makeText(getApplicationContext(), "Download começando...", Toast.LENGTH_SHORT).show();
@@ -74,10 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 mainHandler.post(() -> {
                     if (turma.getAlunos().isEmpty() == false) {
-                        System.out.println(turma.getAlunos());
-                        textViewMediaIdade.setText(String.format("Média das idades: %.2f", turma.mediaIdade()));
                         adapterAluno.clear();
-                        adapterAluno.addAll(turma.getAprovados());
+                        adapterAluno.addAll(turma.getAlunos());
                         adapterAluno.notifyDataSetChanged();
                     } else {
                         Toast.makeText(getApplicationContext(), "Não foi possível obter JSON", Toast.LENGTH_SHORT).show();

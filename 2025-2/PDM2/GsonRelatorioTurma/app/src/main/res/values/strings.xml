@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GsonRelatorioTurma</string>
+    <string name="relatorio">Relatório</string>
 </resources>
