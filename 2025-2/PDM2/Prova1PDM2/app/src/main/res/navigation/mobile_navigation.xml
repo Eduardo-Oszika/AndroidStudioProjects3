@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.oszika.prova1pdm2.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_embaralhar"
+        android:name="com.oszika.prova1pdm2.ui.embaralhar.EmbaralharFragment"
+        android:label="@string/menu_embaralhar"
+        tools:layout="@layout/fragment_embaralhar" />
 
     <fragment
         android:id="@+id/nav_slideshow"

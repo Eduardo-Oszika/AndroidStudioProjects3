@@ -1,44 +1,50 @@
-package com.oszika.prova1pdm2.ui.home;
+package com.oszika.prova1pdm2.ui.embaralhar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.oszika.prova1pdm2.databinding.FragmentHomeBinding;
+import com.oszika.prova1pdm2.databinding.FragmentEmbaralharBinding;
+import com.oszika.prova1pdm2.ui.elemento.Elementos;
+import com.oszika.prova1pdm2.ui.home.HomeViewModel;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements AdapterView.OnItemClickListener {
+public class EmbaralharFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentEmbaralharBinding binding;
     private ArrayList<String> lista;
     private ArrayAdapter adapter;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
+        EmbaralharViewModel embaralharViewModel =
+                new ViewModelProvider(requireActivity()).get(EmbaralharViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentEmbaralharBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         lista = new ArrayList<>();
 
+        HomeViewModel homeViewModel =
+                new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
+
+        Elementos elementos = homeViewModel.getElementos();
+        embaralharViewModel.setElementos(elementos);
         adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, lista);
 
-        binding.lvElementos.setAdapter(adapter);
+        binding.lvEmbaralhado.setAdapter(adapter);
 
 
 
-        homeViewModel.getElementosText().observe(getActivity(), new Observer<ArrayList<String>>() {
+        embaralharViewModel.getElementosEmbaralhados().observe(getActivity(), new Observer<ArrayList<String>>() {
             @Override
             public void onChanged(ArrayList<String> strings) {
                 lista = strings;
@@ -47,7 +53,6 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
                 adapter.notifyDataSetChanged();
             }
         });
-
         return root;
     }
 
@@ -55,10 +60,5 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
     }
 }
