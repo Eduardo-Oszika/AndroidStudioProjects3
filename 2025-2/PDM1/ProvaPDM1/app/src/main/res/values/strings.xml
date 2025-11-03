@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">ProvaPDM1</string>
+    <string name="jogar">Jogar</string>
+    <string name="hidrogenio">Hidrogênio</string>
+    <string name="litio">Lítio</string>
+    <string name="sodio">Sódio</string>
+    <string name="potassio">Potássio</string>
+    <string name="rubidio">Rubídio</string>
+    <string name="cesio">Césio</string>
+    <string name="francio">Frâncio</string>
+    <string name="cobre">cobre</string>
+    <string name="prata">prata</string>
+    <string name="ouro">ouro</string>
+    <string name="roentgenio">roentgênio</string>
+    <string name="titanio">titânio</string>
+    <string name="digite_um_numero_de_1_a_12">Digite um numero de 1 a 12</string>
+
+    <string-array name="elementosNome">
+        <item>Hidrogênio</item>
+        <item>Lítio</item>
+        <item>Sódio</item>
+        <item>Potássio</item>
+        <item>Rubídio</item>
+        <item>Césio</item>
+        <item>Frâncio</item>
+        <item>cobre</item>
+        <item>prata</item>
+        <item>ouro</item>
+        <item>roentgênio</item>
+        <item>titânio</item>
+    </string-array>
 </resources>
