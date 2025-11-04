@@ -9,5 +9,9 @@
 
     <string name="menu_home">Mostrar conteúdo</string>
     <string name="menu_embaralhar">Embaralhar</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_jogar">Jogar</string>
+    <string name="digite_um_numero_para_jogar">Digite um numero para jogar</string>
+    <string name="digite_um_numero_para_responder">Digite um numero para responder</string>
+    <string name="jogar">Jogar</string>
+    <string name="enviar_resposta">Enviar Resposta</string>
 </resources>

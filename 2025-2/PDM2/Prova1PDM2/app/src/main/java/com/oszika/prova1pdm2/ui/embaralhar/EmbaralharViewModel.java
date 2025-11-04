@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class EmbaralharViewModel extends ViewModel {
 
     private final MutableLiveData<ArrayList<String>> lista;
-    Elementos elementos;
+    private Elementos elementos, elementosEmbaralhados;
 
     public EmbaralharViewModel() {
         elementos = new Elementos();
@@ -18,14 +18,13 @@ public class EmbaralharViewModel extends ViewModel {
     }
 
     private void embaralhar() {
-        elementos.getNumerosAtomicos();
-        Elementos elementos1 = new Elementos();
-        elementos1.setNomes(elementos.getNomes());
-        elementos1.setSimbolos(elementos.getSimbolos());
+        elementos.getNumerosAtomicos();elementosEmbaralhados = new Elementos();
+        elementosEmbaralhados.setNomes(elementos.getNomes());
+        elementosEmbaralhados.setSimbolos(elementos.getSimbolos());
         for (int i = 0; i < elementos.getNumerosAtomicos().size(); i++) {
-            elementos1.getNumerosAtomicos().add(elementos.getNumerosAtomicos().get(i) + elementos.getNomeLenght(i));
+            elementosEmbaralhados.getNumerosAtomicos().add(elementos.getNumerosAtomicos().get(i) + elementos.getNomeLenght(i));
         }
-        lista.setValue(elementos1.toStringList());
+        lista.setValue(elementosEmbaralhados.toStringList());
     }
 
     public void setElementos(Elementos elementos) {
@@ -33,7 +32,11 @@ public class EmbaralharViewModel extends ViewModel {
         embaralhar();
     }
 
-    public MutableLiveData<ArrayList<String>> getElementosEmbaralhados() {
+    public Elementos getElementosEmbaralhados() {
+        return elementosEmbaralhados;
+    }
+
+    public MutableLiveData<ArrayList<String>> getStringElementosEmbaralhados() {
         return lista;
     }
 }

@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.oszika.prova1pdm2.databinding.FragmentHomeBinding;
+import com.oszika.prova1pdm2.ui.SharedViewModel;
 
 import java.util.ArrayList;
 
@@ -26,7 +27,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
-                new ViewModelProvider(requireActivity()).get(HomeViewModel.class);
+                new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -36,7 +37,8 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
 
         binding.lvElementos.setAdapter(adapter);
 
-
+        SharedViewModel sharedViewModel =
+                new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
 
         homeViewModel.getElementosText().observe(getActivity(), new Observer<ArrayList<String>>() {
             @Override
@@ -45,6 +47,7 @@ public class HomeFragment extends Fragment implements AdapterView.OnItemClickLis
                 adapter.clear();
                 adapter.addAll(lista);
                 adapter.notifyDataSetChanged();
+                sharedViewModel.setElementos(homeViewModel.getElementos());
             }
         });
 
