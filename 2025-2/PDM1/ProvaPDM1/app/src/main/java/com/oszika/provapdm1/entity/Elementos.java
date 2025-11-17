@@ -1,4 +1,6 @@
-package com.oszika.provapdm1;
+package com.oszika.provapdm1.entity;
+
+import com.oszika.provapdm1.R;
 
 import java.io.Serializable;
 

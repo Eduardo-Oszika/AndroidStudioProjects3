@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProvaPDM1">
         <activity
+            android:name=".AcertosActivity"
+            android:exported="false" />
+        <activity
             android:name=".JogarActivity"
             android:exported="false" />
         <activity

@@ -14,6 +14,11 @@
     <string name="roentgenio">roentgênio</string>
     <string name="titanio">titânio</string>
     <string name="digite_um_numero_de_1_a_12">Digite um numero de 1 a 12</string>
+    <string name="tente_adivinhar_o_numero">Tente adivinhar o numero</string>
+    <string name="adivinhe_aqui">Adivinhe aqui</string>
+    <string name="adivinhar">Adivinhar</string>
+    <string name="nova_rodada">Nova Rodada</string>
+    <string name="numero_de_acertos">Número de Acertos:</string>
 
     <string-array name="elementosNome">
         <item>Hidrogênio</item>
