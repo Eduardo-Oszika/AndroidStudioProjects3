@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ExemploFragment01</string>
+    <array name="itens">
+        <item>Java</item>
+        <item>Php</item>
+        <item>Python</item>
+    </array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
