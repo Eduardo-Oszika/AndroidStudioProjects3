@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ExemploNotificacaoExpansivel</string>
+    <string name="a_permissao_necessaria">A permissão é necessária</string>
 </resources>
