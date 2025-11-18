@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".JogarActivity">
+    <include layout="@layout/meu_toolbar"/>
+
+    <EditText
+        android:id="@+id/et_numero_digitado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/digite_um_numero_de_1_a_12"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/buttonClicar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clicou"
+        android:text="Click" />
+
+
+    <ProgressBar
+        android:id="@+id/progres"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="false"
+        android:max="0"
+        android:padding="10dp"
+        android:progress="0"
+        android:visibility="invisible" />
+
+    <TextView
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_mostrar_numeros"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="" />
+    <TextView
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_adivinhar_numero"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="@string/tente_adivinhar_o_numero" />
+
+    <EditText
+        android:visibility="invisible"
+        android:id="@+id/et_adivinha_numero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/adivinhe_aqui"
+        android:inputType="number" />
+    <Button
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="adivinhar"
+        android:id="@+id/buttonAdivinhar"
+        android:text="@string/adivinhar"/>
+
+    <TextView
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/tv_resultado"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text=""/>
+
+
+
+</LinearLayout>

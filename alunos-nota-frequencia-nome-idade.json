@@ -1,0 +1,109 @@
+{
+    "alunos": [
+        {
+            "nome": "Ana Silva",
+            "idade": 16,
+            "nota": [
+                8.5,
+                7,
+                9
+            ],
+            "frequencia": [
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "nome": "Bruno Costa",
+            "idade": 17,
+            "nota": [
+                6.5,
+                7.5,
+                8
+            ],
+            "frequencia": [
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                1
+            ]
+        },
+        {
+            "nome": "Carla Souza",
+            "idade": 15,
+            "nota": [
+                9,
+                8.5,
+                9.5
+            ],
+            "frequencia": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "nome": "Diego Ferreira",
+            "idade": 16,
+            "nota": [
+                5.5,
+                6,
+                7
+            ],
+            "frequencia": [
+                1,
+                0,
+                0,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                0
+            ]
+        },
+        {
+            "nome": "Eduarda Lima",
+            "idade": 17,
+            "nota": [
+                7,
+                8,
+                8.5
+            ],
+            "frequencia": [
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        }
+    ]
+}
