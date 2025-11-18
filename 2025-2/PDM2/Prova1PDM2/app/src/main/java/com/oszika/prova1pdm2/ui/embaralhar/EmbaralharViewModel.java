@@ -1,0 +1,42 @@
+package com.oszika.prova1pdm2.ui.embaralhar;
+
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+
+import com.oszika.prova1pdm2.ui.elemento.Elementos;
+
+import java.util.ArrayList;
+
+public class EmbaralharViewModel extends ViewModel {
+
+    private final MutableLiveData<ArrayList<String>> lista;
+    private Elementos elementos, elementosEmbaralhados;
+
+    public EmbaralharViewModel() {
+        elementos = new Elementos();
+        lista = new MutableLiveData<>();
+    }
+
+    private void embaralhar() {
+        elementos.getNumerosAtomicos();elementosEmbaralhados = new Elementos();
+        elementosEmbaralhados.setNomes(elementos.getNomes());
+        elementosEmbaralhados.setSimbolos(elementos.getSimbolos());
+        for (int i = 0; i < elementos.getNumerosAtomicos().size(); i++) {
+            elementosEmbaralhados.getNumerosAtomicos().add(elementos.getNumerosAtomicos().get(i) + elementos.getNomeLenght(i));
+        }
+        lista.setValue(elementosEmbaralhados.toStringList());
+    }
+
+    public void setElementos(Elementos elementos) {
+        this.elementos = elementos;
+        embaralhar();
+    }
+
+    public Elementos getElementosEmbaralhados() {
+        return elementosEmbaralhados;
+    }
+
+    public MutableLiveData<ArrayList<String>> getStringElementosEmbaralhados() {
+        return lista;
+    }
+}
