@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ExemploFragment03</string>
+    <string name="estrela_1_nome">Estrela 1</string>
+    <string name="estrela_2_nome">Estrela 2</string>
+    <string name="estrela_3_nome">Estrela 3</string>
+    <string name="estrela_1_descricao">Descrição da Estrela 1.</string>
+    <string name="estrela_2_descricao">Descrição da Estrela 2.</string>
+    <string name="estrela_3_descricao">Descrição da Estrela 3.</string>
+
 </resources>
