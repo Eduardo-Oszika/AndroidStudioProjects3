@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         i.putExtra("numero", numeroGerado);
         pendingIntent = PendingIntent.getBroadcast(this, 0, i,
-                PendingIntent.FLAG_IMMUTABLE);
+                PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
         alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 60 * 1000, pendingIntent);
 
     }
