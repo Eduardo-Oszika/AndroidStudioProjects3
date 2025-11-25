@@ -5,22 +5,16 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <EditText
-        android:id="@+id/editTextTexto"
+    <TextView
+        android:id="@+id/textViewTexto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite algo"
-        android:inputType="text" />
+        android:text="Texto da primeira tela"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/buttonSalvar"
+        android:id="@+id/buttonVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Salvar" />
-
-    <Button
-        android:id="@+id/buttonExcluir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Excluir" />
+        android:text="Voltar" />
 </LinearLayout>
