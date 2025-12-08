@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         button = findViewById(R.id.button);
 
-        button.setOnClickListener(view -> dispararAlarme2());
+        button.setOnClickListener(view -> dispararAlarme());
 
     }
 
