@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QuebraSono</string>
+    <string name="a_permissao_necessaria">A permissao é necessaria</string>
+    <string name="mostrar_resultado">Mostrar Resultado</string>
+    <string name="n_meros_escolhidos">Números Escolhidos</string>
+    <string name="numeros_sorteados">Numeros Sorteados</string>
 </resources>

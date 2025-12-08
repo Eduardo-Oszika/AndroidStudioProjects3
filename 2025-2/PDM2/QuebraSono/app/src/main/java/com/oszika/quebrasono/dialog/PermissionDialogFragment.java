@@ -19,7 +19,7 @@ public class PermissionDialogFragment extends DialogFragment {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss(); // Apenas fecha o alerta, o usuário pode tentar novamente
+                        dialog.dismiss();
                     }
                 })
                 .create();
