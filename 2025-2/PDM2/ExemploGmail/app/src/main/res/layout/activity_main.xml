@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
 
@@ -20,4 +21,33 @@
         android:layout_height="wrap_content"
         android:onClick="wHATSSAPP"
         android:text="WHATSSAPP"/>
+
+
+    <EditText
+        android:id="@+id/editNumero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Digite o número"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/editMensagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Digite a mensagem"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:gravity="top"
+        app:layout_constraintTop_toBottomOf="@id/editNumero"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/buttonSms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar SMS"
+        android:onClick="enviarSMS"
+        app:layout_constraintTop_toBottomOf="@id/editMensagem"
+        android:layout_marginTop="16dp"/>
+
 </LinearLayout>

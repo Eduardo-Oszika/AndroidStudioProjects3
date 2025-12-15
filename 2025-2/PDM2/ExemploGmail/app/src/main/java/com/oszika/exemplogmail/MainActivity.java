@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,17 +15,19 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    private Button buttonGmail;
+    private EditText editTextMensagem, editTextNumero ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        buttonGmail = findViewById(R.id.buttonGmail);
+        editTextMensagem = findViewById(R.id.editMensagem);
+        editTextNumero = findViewById(R.id.editNumero);
+
 
     }
-
+//wrap_conten
     public void gMAIL(View view) {
         String[] email = {"eduardoozika.ti@gmail.com"};
         String titulo = "Titulo";
@@ -51,5 +54,15 @@ public class MainActivity extends AppCompatActivity {
                     Uri.parse("https://play.google.com/store/apps/details?id=com.whatsapp"));
             startActivity(playStoreIntent);
         }
+    }
+
+    public void enviarSMS(View view) {
+        String numero = editTextNumero.getText().toString();
+        String mensagem = editTextMensagem.getText().toString();
+        Uri uri = Uri.parse("smsto:" + numero);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(uri);
+        intent.putExtra("sms_body", mensagem);
+        startActivity(intent);
     }
 }
