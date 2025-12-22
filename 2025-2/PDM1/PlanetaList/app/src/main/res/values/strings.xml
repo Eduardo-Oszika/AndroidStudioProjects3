@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">PlanetaList</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="itens">
+        <item>Mercúrio</item>
+        <item>Vênus</item>
+        <item>Terra</item>
+        <item>Marte</item>
+        <item>Júpiter</item>
+        <item>Saturno</item>
+        <item>Urano</item>
+        <item>Netuno</item>
+    </string-array>
+    
+    <string-array name="itens_gravidade">
+        <item>3.7</item>
+        <item>8.87</item>
+        <item>9.81</item>
+        <item>3.71</item>
+        <item>24.79</item>
+        <item>10.44</item>
+        <item>8.69</item>
+        <item>11.15</item>
+    </string-array>
 </resources>
