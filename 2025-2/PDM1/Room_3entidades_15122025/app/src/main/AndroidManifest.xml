@@ -13,13 +13,26 @@
         android:theme="@style/Theme.Room_3entidades_15122025"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".CEstudanteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CDisciplinaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CCursoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false">
         </activity>
     </application>
 

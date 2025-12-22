@@ -1,14 +1,18 @@
 package com.example.room_3entidades_15122025;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.room.Room;
+
+import com.example.room_3entidades_15122025.entity.Curso;
+import com.example.room_3entidades_15122025.entity.Disciplina;
+import com.example.room_3entidades_15122025.entity.DisciplinaComEstudantes;
+import com.example.room_3entidades_15122025.entity.Estudante;
+import com.example.room_3entidades_15122025.entity.EstudanteComDisciplinas;
+import com.example.room_3entidades_15122025.entity.EstudanteDisciplinaCrossRef;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView1, textView2;
@@ -19,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
         textView1 = findViewById(R.id.textViewResultado1);
         textView2 = findViewById(R.id.textViewResultado2);
 
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "escola.db").allowMainThreadQueries().build();
+        AppDatabase db = InstanciaDB.getInstance(getApplicationContext());
         AppDao dao = db.appDao();
         manipulaBanco(dao);
     }
@@ -63,4 +66,15 @@ public class MainActivity extends AppCompatActivity {
 
 
     }//
+
+    public void addCursoLayout(View view) {
+        startActivity(new Intent(this, CCursoActivity.class));
+    }
+
+    public void addDisciplinaLayout(View view) {
+        startActivity(new Intent(this, CDisciplinaActivity.class));
+    }
+
+    public void addEstudanteLayout(View view) {
+    }
 }

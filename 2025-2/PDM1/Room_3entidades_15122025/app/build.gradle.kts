@@ -29,11 +29,17 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
     implementation("androidx.room:room-runtime:2.7.0-rc03")
+    implementation(libs.annotation)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
     annotationProcessor("androidx.room:room-compiler:2.7.0-rc03")
     implementation(libs.appcompat)
     implementation(libs.material)

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -9,17 +8,37 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textViewResultado1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textViewResultado1"
-        />
+        android:text="Hello World!" />
 
     <TextView
+        android:id="@+id/textViewResultado2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textViewResultado2"
-        />
+        android:text="Hello World!" />
+
+    <Button
+        android:id="@+id/addCursoButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="addCursoLayout"
+        android:text="AdicionarCurso" />
+
+    <Button
+        android:id="@+id/addDisciplinaButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="addDisciplinaLayout"
+        android:text="AdicionarDisciplina" />
+
+    <Button
+        android:id="@+id/addEstudanteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="addEstudanteLayout"
+        android:text="AdicionarEstudante" />
+
 
 </LinearLayout>
