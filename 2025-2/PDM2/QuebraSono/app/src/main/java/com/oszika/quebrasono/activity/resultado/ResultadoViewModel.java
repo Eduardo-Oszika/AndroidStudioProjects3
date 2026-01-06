@@ -83,6 +83,7 @@ public class ResultadoViewModel extends ViewModel {
                 InputStream inputStream = conexao.obterRespostaHTTP(URL);
                 Conversao conversao = new Conversao();
                 String textoJSON = conversao.converter(inputStream);
+                inputStream.close();
                 //Log.i("JSON", "doInBackground: " + textoJSON);
                 if (textoJSON != null) {
                     Gson gson = new Gson();

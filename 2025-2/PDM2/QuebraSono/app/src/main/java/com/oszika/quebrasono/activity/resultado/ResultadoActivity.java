@@ -37,7 +37,8 @@ public class ResultadoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resultado);
 
         intent = new Intent(this, MusicService.class);
-        startService(intent);
+        //startService(intent);
+        startForegroundService(intent);
 
         radioGroup = findViewById(R.id.radioGroupOptions);
         layoutAlternativa = findViewById(R.id.selecionar_layout);
