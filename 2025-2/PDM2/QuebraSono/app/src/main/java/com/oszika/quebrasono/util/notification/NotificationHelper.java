@@ -16,19 +16,18 @@ import androidx.core.app.NotificationManagerCompat;
 
 import com.oszika.quebrasono.R;
 import com.oszika.quebrasono.activity.resultado.ResultadoActivity;
-import com.oszika.quebrasono.util.service.MusicService;
 
 public class NotificationHelper {
 
     public static final String CHANNEL_ID = "canal_1";
     public static final int NOTIFICATION_ID = 1;
-    private Context context;
+    private static Context context;
 
     public NotificationHelper(Context context) {
         this.context = context;
     }
 
-    private void criarCanal() {
+    private static void criarCanal() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             CharSequence nome = "canal 1";
             String descricao = "Canal descricao 1";
@@ -65,17 +64,9 @@ public class NotificationHelper {
     }
 
     public static Notification gerarNotificacaoMusica(Context context) {
-        String musicChannel = "music_channel";
-        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(
-                    musicChannel,
-                    "Music Service",
-                    NotificationManager.IMPORTANCE_LOW
-            );
-            manager.createNotificationChannel(channel);
-        }
-        return new NotificationCompat.Builder(context, musicChannel)
+        criarCanal();
+
+        return new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setContentTitle("Reproduzindo música")
                 .setContentText("A música está tocando em segundo plano")
                 .setSmallIcon(android.R.drawable.ic_media_play)
