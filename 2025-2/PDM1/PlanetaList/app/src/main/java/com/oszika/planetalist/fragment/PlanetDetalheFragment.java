@@ -64,7 +64,8 @@ public class PlanetDetalheFragment extends Fragment {
         EditText editTextNome = view.findViewById(R.id.edt_seu_nome);
         EditText editTextDescricao = view.findViewById(R.id.edt_massa);
         ProgressBar progressBar = view.findViewById(R.id.progress_bar);
-        TextView textViewResultado = view.findViewById(R.id.txt_resultado);
+        TextView textViewPesoResultado = view.findViewById(R.id.txt_peso_resultado);
+        TextView textViewMassaResultado = view.findViewById(R.id.txt_massa_resultado);
 
         Button btnCalcular = view.findViewById(R.id.btn_calcular);
         btnCalcular.setOnClickListener(new View.OnClickListener() {
@@ -84,15 +85,19 @@ public class PlanetDetalheFragment extends Fragment {
                 }
 
                 double massa = Double.parseDouble(editTextDescricao.getText().toString());
-                double peso = (massa / 9.81) * planeta.getGravidade();
 
-                executarProgressBar(progressBar, textViewResultado, peso);
-                dao.inserirUserPlanet(new UserPlanet(nome,massaTexto, planeta.getNome(), peso));
+
+                executarProgressBar(progressBar, textViewPesoResultado,textViewMassaResultado, planeta.getStringMassaEmkg(massa), planeta.getStringPessoEmNewton(massa));
+
+                Double pessoSuperfice = planeta.getPesoNoPlaneta();
+                Double massaSuperfice = planeta.getMassaNoPlaneta();
+
+                dao.inserirUserPlanet(new UserPlanet(nome,massaTexto, planeta.getNome(),pessoSuperfice, massaSuperfice));
             }
         });
     }
 
-    private void executarProgressBar(ProgressBar progressBar, TextView textViewResultado, double peso) {
+    private void executarProgressBar(ProgressBar progressBar, TextView textViewPesoResultado,TextView textViewMassaResultado, String massa, String peso) {
         progresso = 0;
         progressBar.setProgress(progresso);
         progressBar.setVisibility(View.VISIBLE);
@@ -110,8 +115,8 @@ public class PlanetDetalheFragment extends Fragment {
                             progressBar.setProgress(progresso);
                             if (progresso == 100) {
                                 progressBar.setVisibility(View.GONE);
-                                String resultado = String.format("Peso no planeta : %.2f Kg", peso);
-                                textViewResultado.setText(resultado);
+                                textViewMassaResultado.setText(massa);
+                                textViewPesoResultado.setText(peso);
                             }
                         }
                     });

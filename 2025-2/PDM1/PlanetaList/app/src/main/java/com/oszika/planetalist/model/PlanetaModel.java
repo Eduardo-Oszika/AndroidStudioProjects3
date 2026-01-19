@@ -1,12 +1,13 @@
 package com.oszika.planetalist.model;
 
 
-import android.graphics.drawable.Drawable;
-
 public class PlanetaModel {
     String nome;
     Double gravidade;
     int imagem;
+    Double pesoNoPlaneta;
+    Double massaNoPlaneta;
+
 
     public PlanetaModel(String nome, Double gravidade, int imagem) {
         this.nome = nome;
@@ -36,6 +37,26 @@ public class PlanetaModel {
 
     public void setImagem(int imagem) {
         this.imagem = imagem;
+    }
+
+    public String getStringMassaEmkg(Double massa) {
+        this.massaNoPlaneta = (massa / 9.81) * this.gravidade;
+        String massaNoPlaneta = String.format("%.2f", this.massaNoPlaneta);
+        return "Massa no planeta: " + massaNoPlaneta + " kg";
+    }
+
+    public String getStringPessoEmNewton(Double massa) {
+        this.pesoNoPlaneta = massa * this.gravidade;
+        String pesoNoPlaneta = String.format("%.2f", this.pesoNoPlaneta);
+        return "Peso no planeta: " + pesoNoPlaneta + " N";
+    }
+
+    public Double getPesoNoPlaneta() {
+        return pesoNoPlaneta;
+    }
+
+    public Double getMassaNoPlaneta() {
+        return massaNoPlaneta;
     }
 
     @Override
