@@ -1,10 +1,4 @@
 {
-    "info": {
-        "count": 50,
-        "totalPages": 197,
-        "previousPage": null,
-        "nextPage": "http://api.disneyapi.dev/character?page=2&pageSize=50"
-    },
     "data": [
         {
             "_id": 112,
