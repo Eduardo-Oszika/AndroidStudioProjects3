@@ -28,15 +28,20 @@ public class UserPlanet {
     @ColumnInfo(name = "user_planet_peso_na_superficie")
     public Double pesoNaSuperficie;
 
+    @NonNull
+    @ColumnInfo
+    public Double massaNaSuperficie;
+
     public UserPlanet() {
     }
 
     @Ignore
-    public UserPlanet(@NonNull String nome, @NonNull String massa, @NonNull String planetaNome, @NonNull Double pesoNaSuperficie) {
+    public UserPlanet(@NonNull String nome, @NonNull String massa, @NonNull String planetaNome, @NonNull Double pesoNaSuperficie, @NonNull Double massaNaSuperficie) {
         this.nome = nome;
         this.massa = massa;
         this.planetaNome = planetaNome;
         this.pesoNaSuperficie = pesoNaSuperficie;
+        this.massaNaSuperficie = massaNaSuperficie;
     }
 
 }
