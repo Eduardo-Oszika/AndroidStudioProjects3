@@ -1,4 +1,5 @@
-
+{
+    "data": [
         {
             "_id": 112,
             "films": [
@@ -822,3 +823,5 @@
             "imageUrl": "https://static.wikia.nocookie.net/disney/images/4/41/Athena_TLM.jpg",
             "url": "https://api.disneyapi.dev/characters/351"
         }
+    ]
+}
