@@ -4,17 +4,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.oszika.provapdm2v2.databinding.FragmentHomeBinding;
+import com.oszika.provapdm2v2.ui.entity.Personagem;
+import com.oszika.provapdm2v2.util.adapter.MeuAdapter;
+
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private ArrayList<Personagem> lista;
+    private MeuAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -24,8 +30,22 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        lista = new ArrayList<>();
+        adapter = new MeuAdapter(getActivity(), lista);
+        binding.lvPersonagens.setAdapter(adapter);
+
+        homeViewModel.getPersonagens().observe(getActivity(), new Observer<ArrayList<Personagem>>() {
+            @Override
+            public void onChanged(ArrayList<Personagem> personagems) {
+                lista = personagems;
+                adapter = new MeuAdapter(getActivity(), lista);
+                binding.lvPersonagens.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
+                homeViewModel.criarBanco(getActivity());
+            }
+        });
+
+
         return root;
     }
 

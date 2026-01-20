@@ -13,7 +13,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import com.oszika.provapdm2v2.dao.AppDao;
+import com.oszika.provapdm2v2.dao.AppDatabase;
 import com.oszika.provapdm2v2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
