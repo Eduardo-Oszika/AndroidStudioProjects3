@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RespostaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="56dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_enunciado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enunciado da Pergunta"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+            <EditText
+                android:id="@+id/et_resposta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Digite sua resposta aqui" />
+
+            <TextView
+                android:id="@+id/tv_dica1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dica1" />
+
+            <TextView
+                android:id="@+id/tv_dica2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dica2" />
+
+            <TextView
+                android:id="@+id/tv_dica3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dica3" />
+
+            <Button
+                android:id="@+id/btn_enviar_resposta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enviar Resposta" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Anterior"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Anterior" />
+
+            <Button
+                android:id="@+id/Proximo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Próximo" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

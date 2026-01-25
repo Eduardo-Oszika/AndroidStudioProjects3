@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CPerguntaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastro de Pergunta"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:gravity="center"
+            android:paddingBottom="10dp"/>
+        <EditText
+            android:id="@+id/et_cpergunta_enunciado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="enunciado" />
+
+        <EditText
+            android:id="@+id/et_cpergunta_resposta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="resposta" />
+
+        <EditText
+            android:id="@+id/et_cpergunta_dica1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="dica 1" />
+        <EditText
+            android:id="@+id/et_cpergunta_dica2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="dica 2" />
+        <EditText
+            android:id="@+id/et_cpergunta_dica3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="dica 3" />
+
+        <Button
+            android:id="@+id/btn_cpergunta_cadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Pergunta" />
+
+    </LinearLayout>
+
+</FrameLayout>
