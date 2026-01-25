@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.oszika.provapdm2v2.databinding.FragmentHomeBinding;
 import com.oszika.provapdm2v2.ui.entity.Personagem;
@@ -31,16 +32,15 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         lista = new ArrayList<>();
-        adapter = new MeuAdapter(getActivity(), lista);
+        adapter = new MeuAdapter(lista);
+        binding.lvPersonagens.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.lvPersonagens.setAdapter(adapter);
 
         homeViewModel.getPersonagens().observe(getActivity(), new Observer<ArrayList<Personagem>>() {
             @Override
             public void onChanged(ArrayList<Personagem> personagems) {
                 lista = personagems;
-                adapter = new MeuAdapter(getActivity(), lista);
-                binding.lvPersonagens.setAdapter(adapter);
-                adapter.notifyDataSetChanged();
+                adapter.setPersonagems(lista);
                 homeViewModel.criarBanco(getActivity());
             }
         });
