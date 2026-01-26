@@ -10,16 +10,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.oszika.provapdm2v2.R;
-import com.oszika.provapdm2v2.ui.entity.Personagem;
+import com.oszika.provapdm2v2.ui.entity.PersonagemPojo;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MeuAdapter extends RecyclerView.Adapter<MeuAdapter.ViewHolder> {
-    private List<Personagem> itens;
+    private List<PersonagemPojo> itens;
 
-    public MeuAdapter(List<Personagem> itens) {
+    public MeuAdapter(List<PersonagemPojo> itens) {
         this.itens = itens;
     }
 
@@ -35,7 +35,7 @@ public class MeuAdapter extends RecyclerView.Adapter<MeuAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         TextView textId = holder.getTextId();
-        Personagem item = itens.get(position);
+        PersonagemPojo item = itens.get(position);
         if (item.getId() != null) {
             textId.setText(String.valueOf(item.getId()).trim());
         }
@@ -61,7 +61,7 @@ public class MeuAdapter extends RecyclerView.Adapter<MeuAdapter.ViewHolder> {
         return itens.size();
     }
 
-    public void setPersonagems(ArrayList<Personagem> lista) {
+    public void setPersonagems(ArrayList<PersonagemPojo> lista) {
         this.itens = lista;
         notifyDataSetChanged();
     }

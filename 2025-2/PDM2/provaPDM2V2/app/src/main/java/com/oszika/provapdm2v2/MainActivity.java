@@ -17,12 +17,15 @@ import androidx.room.Room;
 
 import com.oszika.provapdm2v2.dao.AppDao;
 import com.oszika.provapdm2v2.dao.AppDatabase;
+import com.oszika.provapdm2v2.provider.DadosProvider;
 import com.oszika.provapdm2v2.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    DadosProvider dadosProvider;
+    private AppDao dao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        AppDatabase db = AppDatabase.getDatabase(getApplicationContext());
+        dao = db.appDao();
+
 
         setSupportActionBar(binding.appBarMain.toolbar);
         binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {

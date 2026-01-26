@@ -23,6 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:authorities="com.oszika.provapdm2v2.provider"
+            android:exported="true"
+            android:grantUriPermissions="true"
+            android:name=".provider.DadosProvider"/>
     </application>
 
 </manifest>

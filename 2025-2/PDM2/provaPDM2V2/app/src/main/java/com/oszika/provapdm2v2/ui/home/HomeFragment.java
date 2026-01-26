@@ -12,15 +12,16 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.oszika.provapdm2v2.databinding.FragmentHomeBinding;
-import com.oszika.provapdm2v2.ui.entity.Personagem;
+import com.oszika.provapdm2v2.ui.entity.PersonagemPojo;
 import com.oszika.provapdm2v2.util.adapter.MeuAdapter;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
-    private ArrayList<Personagem> lista;
+    private ArrayList<PersonagemPojo> lista;
     private MeuAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -36,12 +37,12 @@ public class HomeFragment extends Fragment {
         binding.lvPersonagens.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.lvPersonagens.setAdapter(adapter);
 
-        homeViewModel.getPersonagens().observe(getActivity(), new Observer<ArrayList<Personagem>>() {
+        homeViewModel.getPersonagens().observe(requireActivity(), new Observer<ArrayList<PersonagemPojo>>() {
             @Override
-            public void onChanged(ArrayList<Personagem> personagems) {
+            public void onChanged(ArrayList<PersonagemPojo> personagems) {
                 lista = personagems;
                 adapter.setPersonagems(lista);
-                homeViewModel.criarBanco(getActivity());
+                homeViewModel.criarBanco(requireContext());
             }
         });
 
