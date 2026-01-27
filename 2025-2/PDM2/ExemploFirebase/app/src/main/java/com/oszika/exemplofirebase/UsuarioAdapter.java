@@ -12,40 +12,42 @@ import java.util.List;
 
 
 public class UsuarioAdapter extends RecyclerView.Adapter<UsuarioAdapter.UsuarioViewHolder> {
-    private List<Usuario> listaUsuarios;
+    private List<Usuario> usuarios;
 
-    public UsuarioAdapter(List<Usuario> listaUsuarios) {
-        this.listaUsuarios = listaUsuarios;
+    public UsuarioAdapter(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
+
 
     @NonNull
     @Override
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout,parent,false);
-
-        return new  UsuarioViewHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_layout, parent,
+                false);
+        return new UsuarioViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
-        Usuario usuario = listaUsuarios.get(position);
-        holder.textNome.setText(usuario.getNome());
-        holder.textEmail.setText(usuario.getEmail());
-
+        Usuario usuario = usuarios.get(position);
+        holder.txtNome.setText(usuario.getNome());
+        holder.txtEmail.setText(usuario.getEmail());
     }
 
     @Override
     public int getItemCount() {
-        return listaUsuarios.size();
+        return usuarios.size();
     }
 
-    public class UsuarioViewHolder extends RecyclerView.ViewHolder {
-        TextView textNome, textEmail;
+    class UsuarioViewHolder extends RecyclerView.ViewHolder {
+        TextView txtNome, txtEmail;
 
         public UsuarioViewHolder(@NonNull View itemView) {
             super(itemView);
-            textNome = itemView.findViewById(R.id.txtNome);
-            textEmail = itemView.findViewById(R.id.txtEmail);
+            txtNome = itemView.findViewById(R.id.txtNome);
+            txtEmail = itemView.findViewById(R.id.txtEmail);
+
         }
-    }
-}
+    }//inner class
+}//class
+

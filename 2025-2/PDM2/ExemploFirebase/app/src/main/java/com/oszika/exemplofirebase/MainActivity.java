@@ -1,6 +1,7 @@
 package com.oszika.exemplofirebase;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -8,28 +9,28 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private UsuarioViewModel usuarioViewModel;
+    private UsuarioViewModel viewModel;
     private UsuarioAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-
         RecyclerView recyclerView = findViewById(R.id.recyclerUsuarios);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new UsuarioAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
 
-        usuarioViewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
+        viewModel = new ViewModelProvider(this).get(UsuarioViewModel.class);
 
-        usuarioViewModel.getUsuariosLiveData().observe(this, new Observer<List<Usuario>>() {
+        viewModel.getUsuariosLiveData().observe(this, new Observer<List<Usuario>>() {
             @Override
             public void onChanged(List<Usuario> usuarios) {
                 adapter = new UsuarioAdapter(usuarios);
@@ -37,19 +38,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        usuarioViewModel.getErroLiveData().observe(this, new Observer<String>() {
-
+        viewModel.getErroLiveData().observe(this, new Observer<String>() {
             @Override
-            public void onChanged(String mensagem) {
-                Toast.makeText(MainActivity.this, mensagem, Toast.LENGTH_SHORT).show();
+            public void onChanged(String s) {
+                Toast.makeText(MainActivity.this, s, Toast.LENGTH_SHORT).show();
             }
         });
 
         Button buttonConectar = findViewById(R.id.buttonConectar);
-        buttonConectar.setOnClickListener(v -> {
-            Usuario novoUsuario = new Usuario(null, "Teste", "teste@gmail.com");
-            usuarioViewModel.addUsuario(novoUsuario);
-
+        buttonConectar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Usuario usuario = new Usuario(null,"Teste","teste@gmail.com");
+                viewModel.addUsuario(usuario);
+            }
         });
-    }
-}
+    }//onCreate
+}//class

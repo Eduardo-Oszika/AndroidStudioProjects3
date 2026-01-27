@@ -18,25 +18,26 @@ public class UsuarioRepository {
         firebase = FirebaseDatabase.getInstance().getReference("usuarios");
     }
 
-    public void addUsuario(Usuario usuario) {
+    public void addUsuario(Usuario usuario){
         String id = firebase.push().getKey();
         usuario.setId(id);
-        firebase.child(id).setValue(usuario);
-    }
 
-    public void obterUsuarios(UsuarioListener listener) {
+        firebase.child(id).setValue(usuario); //JSON
+    }//
+
+    public void obterUsuarios(UsuarioListener listener){
         firebase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                List<Usuario> usuarios = new ArrayList<>();
-                for (DataSnapshot child: snapshot.getChildren()){
+                List<Usuario> lista = new ArrayList<>();
+                for(DataSnapshot child: snapshot.getChildren()){
                     Usuario usuario = child.getValue(Usuario.class);
-                    if (usuario!=null) {
-                        usuarios.add(usuario);
+                    if(usuario!=null){
+                        lista.add(usuario);
                     }
-                }
+                }//for
+                listener.onSucess(lista);
 
-                listener.onSuccess(usuarios);
             }
 
             @Override
@@ -44,11 +45,10 @@ public class UsuarioRepository {
                 listener.onError(error.getMessage());
             }
         });
-    }
+    }//
 
     public interface UsuarioListener{
-        void onSuccess(List<Usuario> usuarios);
-        void onError(String mensagem);
-    }
-
-}
+        void onSucess(List<Usuario> usuarios);
+        void onError(String error);
+    }//
+}//class
