@@ -17,9 +17,10 @@ import com.oszika.provapdm1v2.MainActivity;
 import com.oszika.provapdm1v2.R;
 import com.oszika.provapdm1v2.dao.AppDao;
 import com.oszika.provapdm1v2.entity.Pergunta;
+import com.oszika.provapdm1v2.service.ServicePergunta;
 
 public class CPerguntaFragment extends Fragment {
-
+    private ServicePergunta servicePergunta;
 
     public CPerguntaFragment() {
         // Required empty public constructor
@@ -29,6 +30,7 @@ public class CPerguntaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        servicePergunta = new ServicePergunta(getActivity().getApplicationContext());
     }
 
     @Override
@@ -63,8 +65,7 @@ public class CPerguntaFragment extends Fragment {
                 if (verificarCampos(enun, resp, d1, d2, d3, enunciado, resposta, dica1, dica2, dica3)){
                     MainActivity activity = (MainActivity) getActivity();
                     if (activity != null) {
-                        AppDao dao = activity.getDao();
-                        Long l = dao.inserirPergunta(new Pergunta(enun, resp, d1, d2, d3));
+                        Long l = servicePergunta.inserirPergunta(new Pergunta(enun, resp, d1, d2, d3));
                         if (l > 0)
                             Toast.makeText(activity, "Pergunta cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
 

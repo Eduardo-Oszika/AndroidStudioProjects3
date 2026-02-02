@@ -1,6 +1,9 @@
 package com.oszika.provapdm1v2.service;
 
+import android.content.Context;
+
 import com.oszika.provapdm1v2.dao.AppDao;
+import com.oszika.provapdm1v2.dao.AppDatabase;
 import com.oszika.provapdm1v2.entity.Pergunta;
 
 import java.util.List;
@@ -8,8 +11,9 @@ import java.util.List;
 public class ServicePergunta {
     private final AppDao dao;
 
-    public ServicePergunta(AppDao dao) {
-        this.dao = dao;
+    public ServicePergunta(Context context) {
+        AppDatabase db = AppDatabase.getDatabase(context);
+        this.dao = db.appDao();
     }
 
     public void insertPerguntaDefaults() {
@@ -21,5 +25,13 @@ public class ServicePergunta {
             dao.inserirPergunta(new Pergunta("Qual é o nome da técnica especial de Nen criada por Kurapika para combater a Trupe Fantasma?", "Correntes do Julgamento", "Envolve correntes", "Só pode ser usada contra membros específicos", "É mortal para a Trupe Fantasma"));
             dao.inserirPergunta(new Pergunta("Qual é o nome do jogo mortal que mistura Nen e videogame no arco dos Hunters?", "Greed Island", "Funciona como um jogo real", "Usa cartas especiais", "Acontece em uma ilha isolada"));
         }
+    }
+
+    public List<Pergunta> obterPerguntas() {
+        return dao.obterPerguntas();
+    }
+
+    public Long inserirPergunta(Pergunta pergunta) {
+        return dao.inserirPergunta(pergunta);
     }
 }

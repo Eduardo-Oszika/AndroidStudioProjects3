@@ -17,9 +17,11 @@ import com.oszika.provapdm1v2.R;
 import com.oszika.provapdm1v2.dao.AppDao;
 import com.oszika.provapdm1v2.dialog.AlertDialogLogin;
 import com.oszika.provapdm1v2.entity.Usuario;
+import com.oszika.provapdm1v2.service.ServiceUsuario;
 
 
 public class LoginUsuarioFragment extends Fragment {
+    ServiceUsuario serviceUsuario;
 
     public LoginUsuarioFragment() {
         // Required empty public constructor
@@ -29,6 +31,7 @@ public class LoginUsuarioFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        serviceUsuario = new ServiceUsuario(getActivity().getApplicationContext());
     }
 
     @Override
@@ -48,7 +51,6 @@ public class LoginUsuarioFragment extends Fragment {
         btnLoginUser = view.findViewById(R.id.btnUserLogin);
         btnCadastrarUser = view.findViewById(R.id.btnCadastroUsuario);
 
-        AppDao dao = activity.getDao();
         btnLoginUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,8 +59,7 @@ public class LoginUsuarioFragment extends Fragment {
 
                 if (activity != null) {
                     if (verificaCampos(user, pass, username, senha)) {
-                        AppDao dao = activity.getDao();
-                        Usuario usuario = dao.autenticarUsuario(user, pass);
+                        Usuario usuario = serviceUsuario.autenticarUsuario(user, pass);
                         if (usuario != null && !usuario.isAdministrador()) {
                             Toast.makeText(activity, "Login de usuario bem-sucedido!", Toast.LENGTH_SHORT).show();
                             activity.mostrar(new RespostaFragment());
@@ -79,7 +80,7 @@ public class LoginUsuarioFragment extends Fragment {
 
                 if (verificaCampos(user, pass, username, senha)) {
                     if (activity != null) {
-                        dao.inserirUsuario(new Usuario(user, pass, "Usuario"));
+                        serviceUsuario.inserirUsuario(new Usuario(user, pass, "Usuario"));
                         limparCampos(username, senha);
                     }
                 }

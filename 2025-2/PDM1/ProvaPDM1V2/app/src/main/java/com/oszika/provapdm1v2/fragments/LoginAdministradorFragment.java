@@ -18,6 +18,8 @@ import com.oszika.provapdm1v2.R;
 import com.oszika.provapdm1v2.dao.AppDao;
 import com.oszika.provapdm1v2.dialog.AlertDialogLogin;
 import com.oszika.provapdm1v2.entity.Usuario;
+import com.oszika.provapdm1v2.service.ServicePergunta;
+import com.oszika.provapdm1v2.service.ServiceUsuario;
 
 
 public class LoginAdministradorFragment extends Fragment {
@@ -55,11 +57,12 @@ public class LoginAdministradorFragment extends Fragment {
                 String user = username.getText().toString();
                 String pass = senha.getText().toString();
 
-                // Aqui você pode adicionar a lógica de autenticação do administrador
+
                 if(activity != null) {
                     if (verificaCampos(user, pass, username, senha)) {
-                        AppDao dao = activity.getDao();
-                        Usuario usuario = dao.autenticarUsuario(user, pass);
+                        ServiceUsuario serviceUsuario = new ServiceUsuario(activity.getApplicationContext());
+
+                        Usuario usuario = serviceUsuario.autenticarUsuario(user, pass);
                         if (usuario!= null && usuario.isAdministrador()) {
                             Toast.makeText(activity, "Login de administrador bem-sucedido!", Toast.LENGTH_SHORT).show();
                             activity.mostrar(new CPerguntaFragment());

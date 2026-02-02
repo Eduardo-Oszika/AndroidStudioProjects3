@@ -16,6 +16,7 @@ import com.oszika.provapdm1v2.MainActivity;
 import com.oszika.provapdm1v2.R;
 import com.oszika.provapdm1v2.dao.AppDao;
 import com.oszika.provapdm1v2.entity.Pergunta;
+import com.oszika.provapdm1v2.service.ServicePergunta;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ import java.util.List;
 public class RespostaFragment extends Fragment {
 
     int posicaoAtual;
+    ServicePergunta servicePergunta;
     public RespostaFragment() {
         posicaoAtual = 0;
     }
@@ -31,6 +33,7 @@ public class RespostaFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        servicePergunta = new ServicePergunta(getActivity().getApplicationContext());
     }
 
     @Override
@@ -54,8 +57,7 @@ public class RespostaFragment extends Fragment {
         Button btnAnteriorPergunta = view.findViewById(R.id.Anterior);
 
         MainActivity activity = (MainActivity) getActivity();
-        AppDao dao = activity.getDao();
-        List<Pergunta> perguntas = dao.obterPerguntas();
+        List<Pergunta> perguntas = servicePergunta.obterPerguntas();
 
         preencerPergunta(tvEnunciado, tvDica1, tvDica2, tvDica3, perguntas, posicaoAtual);
 

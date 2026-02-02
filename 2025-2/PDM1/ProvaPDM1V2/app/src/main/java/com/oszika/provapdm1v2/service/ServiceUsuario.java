@@ -1,14 +1,17 @@
 package com.oszika.provapdm1v2.service;
 
-import com.oszika.provapdm1v2.MainActivity;
+import android.content.Context;
+
 import com.oszika.provapdm1v2.dao.AppDao;
+import com.oszika.provapdm1v2.dao.AppDatabase;
 import com.oszika.provapdm1v2.entity.Usuario;
 
 public class ServiceUsuario {
     private final AppDao dao;
 
-    public ServiceUsuario(AppDao dao) {
-        this.dao = dao;
+    public ServiceUsuario(Context context) {
+        AppDatabase db = AppDatabase.getDatabase(context);
+        dao = db.appDao();
     }
 
     public void insertUsuarioDefaults() {
@@ -16,5 +19,13 @@ public class ServiceUsuario {
         if (user == null){
         dao.inserirUsuario(new Usuario("root","123","administrador"));
         }
+    }
+
+    public Usuario autenticarUsuario(String username, String password) {
+        return dao.autenticarUsuario(username, password);
+    }
+
+    public void inserirUsuario(Usuario usuario) {
+        dao.inserirUsuario(usuario);
     }
 }

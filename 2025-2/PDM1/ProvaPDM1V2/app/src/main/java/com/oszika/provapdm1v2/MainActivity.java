@@ -15,17 +15,13 @@ import com.oszika.provapdm1v2.fragments.SelecaoLoginFragment;
 import com.oszika.provapdm1v2.service.ServicePergunta;
 import com.oszika.provapdm1v2.service.ServiceUsuario;
 
-public class MainActivity extends AppCompatActivity {
-    public AppDao dao;
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class, "pergunta.db").allowMainThreadQueries().build();
-        dao = db.appDao();
         inserirDadosIniciais();
 
         if (savedInstanceState == null) {
@@ -44,15 +40,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void inserirDadosIniciais() {
-        ServiceUsuario serviceUsuario = new ServiceUsuario(dao);
+        ServiceUsuario serviceUsuario = new ServiceUsuario(getApplicationContext());
         serviceUsuario.insertUsuarioDefaults();
 
-        ServicePergunta servicePergunta = new ServicePergunta(dao);
+        ServicePergunta servicePergunta = new ServicePergunta(getApplicationContext());
         servicePergunta.insertPerguntaDefaults();
 
     }
 
-    public AppDao getDao() {
-        return dao;
-    }
 }
