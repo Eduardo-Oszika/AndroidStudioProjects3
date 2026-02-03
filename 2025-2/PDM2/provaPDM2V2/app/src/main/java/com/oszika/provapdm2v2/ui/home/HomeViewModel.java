@@ -84,7 +84,6 @@ public class HomeViewModel extends ViewModel {
                 }
                 mainHandler.post(() -> {
                     if (!personagensContainer.getData().isEmpty()) {
-                        // Atualize os LiveData ou execute outras ações na thread principal
                         ArrayList<PersonagemPojo> personagensList = new ArrayList<>(personagensContainer.getData());
                         lista.setValue(personagensList);
 
