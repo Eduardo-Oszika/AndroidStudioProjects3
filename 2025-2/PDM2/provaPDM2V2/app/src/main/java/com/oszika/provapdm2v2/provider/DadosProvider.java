@@ -19,7 +19,7 @@ public class DadosProvider extends ContentProvider {
     private AppDatabase database;
     private AppDao dao;
     public static final String AUTHORITY = "com.oszika.provapdm2v2.provider";
-    public static final String PATH = "personagens";
+    public static final String PATH = "jogadas";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + PATH);
 
     private static final int CODIGO_URI_TODOS = 1;
@@ -45,17 +45,17 @@ public class DadosProvider extends ContentProvider {
     @Override
     public int delete(@NonNull Uri uri, @Nullable String s, @Nullable String[] strings) {
         int count = 0;
-        switch (URI_MATCHER.match(uri)) {
-            case CODIGO_URI_TODOS:
-                count = dao.deletarTodosPersonagems();
-                break;
-            case CODIGO_URI_UNICO:
-                Integer id = (int) ContentUris.parseId(uri);
-                count = dao.deletarPersonagemPorId(id);
-                break;
-            default:
-                throw new IllegalArgumentException("URI inválida para exclusão: " + uri);
-        }
+//        switch (URI_MATCHER.match(uri)) {
+//            case CODIGO_URI_TODOS:
+//                count = dao.deletarTodosPersonagems();
+//                break;
+//            case CODIGO_URI_UNICO:
+//                Integer id = (int) ContentUris.parseId(uri);
+//                count = dao.deletarPersonagemPorId(id);
+//                break;
+//            default:
+//                throw new IllegalArgumentException("URI inválida para exclusão: " + uri);
+//        }
         if (count > 0) {
             getContext().getContentResolver().notifyChange(uri, null);
         }
@@ -81,24 +81,24 @@ public class DadosProvider extends ContentProvider {
         if (URI_MATCHER.match(uri) != CODIGO_URI_TODOS) {
             throw new IllegalArgumentException("URI inválida para insert: " + uri);
         }
-        if (values == null) return null;
-
-        Personagem p = new Personagem();
-
-        if (values.containsKey("personagem_nome")) {
-            p.name = values.getAsString("personagem_nome");
-        }
-        if (values.containsKey("personagem_imageUrl")) {
-            p.imageUrl = values.getAsString("personagem_imageUrl");
-        }
-
-        long id = dao.insertPersonagem(p);
-
-        if (id > 0) {
-            Uri uriNovo = ContentUris.withAppendedId(CONTENT_URI, id);
-            getContext().getContentResolver().notifyChange(uriNovo, null);
-            return uriNovo;
-        }
+//        if (values == null) return null;
+//
+//        Personagem p = new Personagem();
+//
+//        if (values.containsKey("personagem_nome")) {
+//            p.name = values.getAsString("personagem_nome");
+//        }
+//        if (values.containsKey("personagem_imageUrl")) {
+//            p.imageUrl = values.getAsString("personagem_imageUrl");
+//        }
+//
+//        long id = dao.insertPersonagem(p);
+//
+//        if (id > 0) {
+//            Uri uriNovo = ContentUris.withAppendedId(CONTENT_URI, id);
+//            getContext().getContentResolver().notifyChange(uriNovo, null);
+//            return uriNovo;
+//        }
         return null;
     }
 

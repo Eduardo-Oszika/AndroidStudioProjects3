@@ -7,6 +7,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.oszika.provapdm2v2.ui.entity.Jogada;
 import com.oszika.provapdm2v2.ui.entity.Personagem;
 
 import java.util.List;
@@ -22,10 +23,10 @@ public interface AppDao {
     @Query("SELECT * FROM Personagem WHERE personagem_id = :id")
     Personagem obterPersonagemPorId(Integer id);
 
-    @Query("SELECT *, personagem_id AS _id FROM personagem")
+    @Query("SELECT *, jogada_id AS _id FROM jogada")
     Cursor selectAll();
 
-    @Query("SELECT *, personagem_id AS _id FROM personagem WHERE personagem_id = :id")
+    @Query("SELECT *, jogada_id AS _id FROM jogada WHERE jogada_id = :id")
     Cursor selectById(long id);
 
     @Query("DELETE FROM Personagem where personagem_id = :id")
@@ -37,5 +38,12 @@ public interface AppDao {
     @Update
     int atualizarPersonagem(Personagem p);
 
+    @Insert
+    Long insertJogada(Jogada j);
 
+    @Query("SELECT * FROM Jogada")
+    List<Jogada> obterJogadas();
+
+    @Query("SELECT * FROM jogada WHERE jogada_id = :id")
+    Jogada obterJogadaPorId(Long id);
 }

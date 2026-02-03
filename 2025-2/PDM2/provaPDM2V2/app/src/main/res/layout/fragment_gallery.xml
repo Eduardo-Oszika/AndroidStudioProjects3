@@ -1,22 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.gallery.GalleryFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/nome_jogada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Digite o nome" />
+
+            <EditText
+                android:id="@+id/numero_jogador"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/numero_android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/btn_gerar_jogada"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gerar Jogada" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lv_personagens"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp" />
+
+            <Button
+                android:visibility="gone"
+                android:id="@+id/jogar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jogar" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
