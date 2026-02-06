@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExemploSharePreferences</string>
+    <string-array name="cores_array">
+        <item>Vermelho</item>
+        <item>Verde</item>
+        <item>Azul</item>
+    </string-array>
+</resources>
