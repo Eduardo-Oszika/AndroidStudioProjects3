@@ -31,21 +31,16 @@ public class SegundaActivity extends AppCompatActivity {
         btnEnviar.setOnClickListener(v -> {
             int acertos = 0;
 
-            // Gabarito
+
             if (questao1.getCheckedRadioButtonId() == R.id.q1resp1) acertos++;
             if (questao2.getCheckedRadioButtonId() == R.id.q2resp3) acertos++;
             if (questao3.getCheckedRadioButtonId() == R.id.q3resp2) acertos++;
 
             int erros = 3 - acertos;
 
-            // Salvar no SharedPreferences
-            SharedPreferences prefs = getSharedPreferences("APP_PREFS", MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putInt("acertos", acertos);
-            editor.putInt("erros", erros);
-            editor.apply();
+            SharePreferencesUtil.salvarResultado(this, acertos, erros);
 
-            // Ir para a próxima tela
+
             Intent i = new Intent(SegundaActivity.this, ResultadoActivity.class);
             startActivity(i);
             finish();

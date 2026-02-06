@@ -32,10 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (name.equals("admin") && senha.equals("1234")) {
 
-                SharedPreferences prefs = getSharedPreferences("APP_PREFS", MODE_PRIVATE);
-                SharedPreferences.Editor editor = prefs.edit();
-                editor.putBoolean("logado", true);
-                editor.apply();
+                SharePreferencesUtil.salvarLogin(this,true);
 
                 Intent i = new Intent(MainActivity.this, SegundaActivity.class);
                 startActivity(i);

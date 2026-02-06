@@ -19,10 +19,9 @@ public class ResultadoActivity extends AppCompatActivity {
         tvAcertos = findViewById(R.id.txtAcertos);
         tvErros = findViewById(R.id.txtErros);
 
-        SharedPreferences prefs = getSharedPreferences("APP_PREFS", MODE_PRIVATE);
 
-        int acertos = prefs.getInt("acertos", 0);
-        int erros = prefs.getInt("erros", 0);
+        int acertos = SharePreferencesUtil.obterAcertos(this);
+        int erros = SharePreferencesUtil.obterErros(this);
 
         tvAcertos.setText("Acertos: " + acertos);
         tvErros.setText("Erros: " + erros);
