@@ -12,9 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.oszika.provapdm1v2.MainActivity;
+import com.oszika.provapdm1v2.activity.MainActivity;
 import com.oszika.provapdm1v2.R;
-import com.oszika.provapdm1v2.dao.AppDao;
 import com.oszika.provapdm1v2.dialog.AlertDialogLogin;
 import com.oszika.provapdm1v2.entity.Usuario;
 import com.oszika.provapdm1v2.service.ServiceUsuario;
@@ -32,6 +31,7 @@ public class LoginUsuarioFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         serviceUsuario = new ServiceUsuario(getActivity().getApplicationContext());
+
     }
 
     @Override
@@ -62,6 +62,7 @@ public class LoginUsuarioFragment extends Fragment {
                         Usuario usuario = serviceUsuario.autenticarUsuario(user, pass);
                         if (usuario != null && !usuario.isAdministrador()) {
                             Toast.makeText(activity, "Login de usuario bem-sucedido!", Toast.LENGTH_SHORT).show();
+                            activity.setUsuarioLogado(usuario);
                             activity.mostrar(new RespostaFragment());
                         } else {
                             openAlertDialog();

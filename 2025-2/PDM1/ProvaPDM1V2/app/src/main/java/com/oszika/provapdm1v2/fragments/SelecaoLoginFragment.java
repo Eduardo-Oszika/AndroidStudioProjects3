@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.oszika.provapdm1v2.MainActivity;
+import com.oszika.provapdm1v2.activity.MainActivity;
 import com.oszika.provapdm1v2.R;
 
 

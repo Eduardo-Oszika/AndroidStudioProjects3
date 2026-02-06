@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProvaPDM1V2">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.QuestaoDetalhe"
+            android:exported="false" />
+        <activity
+            android:name=".activity.PontuacaoTotal"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

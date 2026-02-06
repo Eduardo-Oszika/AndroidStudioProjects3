@@ -6,10 +6,11 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.oszika.provapdm1v2.entity.Jogada;
 import com.oszika.provapdm1v2.entity.Pergunta;
 import com.oszika.provapdm1v2.entity.Usuario;
 
-@Database(entities = {Usuario.class, Pergunta.class} , version = 1)
+@Database(entities = {Usuario.class, Pergunta.class, Jogada.class} , version = 1)
 
 public abstract class AppDatabase extends RoomDatabase {
     public abstract AppDao appDao();

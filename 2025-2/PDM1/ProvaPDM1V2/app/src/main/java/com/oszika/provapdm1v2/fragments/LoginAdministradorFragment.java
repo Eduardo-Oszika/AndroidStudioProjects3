@@ -13,12 +13,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.oszika.provapdm1v2.MainActivity;
+import com.oszika.provapdm1v2.activity.MainActivity;
 import com.oszika.provapdm1v2.R;
-import com.oszika.provapdm1v2.dao.AppDao;
 import com.oszika.provapdm1v2.dialog.AlertDialogLogin;
 import com.oszika.provapdm1v2.entity.Usuario;
-import com.oszika.provapdm1v2.service.ServicePergunta;
 import com.oszika.provapdm1v2.service.ServiceUsuario;
 
 
