@@ -1,0 +1,35 @@
+{
+  "disciplina": "Android",
+  "alunos": [
+    {
+      "nome": "Ana",
+      "nota1": 5.8,
+      "nota2": 5.4,
+      "frequencias": [true, true, true, false, true]
+    },
+    {
+      "nome": "Marcos",
+      "nota1": 6.0,
+      "nota2": 6.5,
+      "frequencias": [true, false, true, true, true]
+    },
+    {
+      "nome": "Hyan",
+      "nota1": 9.0,
+      "nota2": 8.8,
+      "frequencias": [true, true, true, true, true]
+    },
+    {
+      "nome": "Lucas",
+      "nota1": 5.5,
+      "nota2": 6.0,
+      "frequencias": [false, true, false, true, true]
+    },
+    {
+      "nome": "Eduardo",
+      "nota1": 7.5,
+      "nota2": 7.8,
+      "frequencias": [true, true, false, true, false]
+    }
+  ]
+}
