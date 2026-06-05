@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+
+    <queries>
+        <provider android:authorities="com.oszika.revisaoprovapdm2.provider" />
+    </queries>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,6 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name=".provider.DadosProvider"
+            android:authorities="com.oszika.revisaoprovapdm2.provider"
+            android:exported="true"
+            android:grantUriPermissions="true" />
     </application>
-
 </manifest>

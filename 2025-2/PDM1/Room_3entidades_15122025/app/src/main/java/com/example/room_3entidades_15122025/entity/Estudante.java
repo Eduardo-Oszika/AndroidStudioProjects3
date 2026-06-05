@@ -1,10 +1,12 @@
-package com.example.room_3entidades_15122025;
+package com.example.room_3entidades_15122025.entity;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import com.example.room_3entidades_15122025.Curso;
 
 @Entity(tableName = "estudante",
     foreignKeys = {

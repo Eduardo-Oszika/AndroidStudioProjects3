@@ -36,6 +36,10 @@ android {
 
 dependencies {
 
+    implementation("com.google.code.gson:gson:2.11.0")
+    implementation("androidx.room:room-runtime:2.7.0-rc03")
+    annotationProcessor("androidx.room:room-compiler:2.7.0-rc03")
+    implementation(libs.activity)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)

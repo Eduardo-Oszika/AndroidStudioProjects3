@@ -1,4 +1,4 @@
-package com.example.room_3entidades_15122025;
+package com.example.room_3entidades_15122025.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
