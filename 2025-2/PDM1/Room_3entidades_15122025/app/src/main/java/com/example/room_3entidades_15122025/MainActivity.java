@@ -3,12 +3,14 @@ package com.example.room_3entidades_15122025;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.room.Room;
+
+import com.example.room_3entidades_15122025.entity.Disciplina;
+import com.example.room_3entidades_15122025.entity.DisciplinaComEstudantes;
+import com.example.room_3entidades_15122025.entity.Estudante;
+import com.example.room_3entidades_15122025.entity.EstudanteComDisciplinas;
+import com.example.room_3entidades_15122025.entity.EstudanteDisciplinaCrossRef;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView1, textView2;

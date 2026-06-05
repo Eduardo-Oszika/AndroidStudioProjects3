@@ -4,6 +4,12 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 
+import com.example.room_3entidades_15122025.entity.Disciplina;
+import com.example.room_3entidades_15122025.entity.DisciplinaComEstudantes;
+import com.example.room_3entidades_15122025.entity.Estudante;
+import com.example.room_3entidades_15122025.entity.EstudanteComDisciplinas;
+import com.example.room_3entidades_15122025.entity.EstudanteDisciplinaCrossRef;
+
 import java.util.List;
 
 @Dao

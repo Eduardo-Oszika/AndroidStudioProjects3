@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".ui.home.HomeFragment">
+
+
+    <EditText
+        android:id="@+id/et_user_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usuário" />
+
+    <EditText
+        android:id="@+id/et_user_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Senha"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btnUserLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Entrar" />
+
+    <Button
+        android:id="@+id/btnCadastroUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar" />
+</LinearLayout>
